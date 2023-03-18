@@ -49,7 +49,7 @@ contract AutomobileRegistrationSystem{
     }
 
     function createCar(string memory _niv) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
-        carFactory.createCarMapping(_niv);
+        carFactory.createCarMapping(_niv); 
     }
 
     function addAccident(string memory _niv, string memory _accident) public {
