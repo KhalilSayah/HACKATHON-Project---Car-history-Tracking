@@ -35,7 +35,6 @@ contract AutomobileRegistrationSystem{
     constructor(){
         systemDeployer = msg.sender;    
         carFactory = new CarFactory();
-        //account = new Accounts();
     }
 
 
@@ -48,8 +47,36 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function createCar(string memory _niv) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
-        carFactory.createCarMapping(_niv); 
+
+    function createCar(string memory _niv, string memory _infos) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
+        carFactory.createCar(_niv, _infos);
+    }
+
+    function getCar(string memory _niv) public view returns(Car){
+        Car car = carFactory.carListMapping(_niv);
+        return car;
+    }
+
+    function setCarOwner(string memory _niv, string memory _owner, uint _boughtForPrice) public{
+        Car car = getCar(_niv);
+        car.setOwner(_owner);
+        car.setPrice(_boughtForPrice);
+    }
+
+    function getCarOwner(string memory _niv) public view returns(string[] memory){
+        return getCar(_niv).getOwnerList();
+    }
+
+    function getCarPreviousPrices(string memory _niv) public view returns(uint[] memory){
+        return getCar(_niv).getPreviousPrices();
+    }
+
+    function setCarSignalisation(string memory _niv, bool _signalisation) public{
+        getCar(_niv).setSignalisation(_signalisation);
+    }
+
+    function getCarSignalisation(string memory _niv) public view returns(bool){
+        return getCar(_niv).getSignalisation();
     }
 
     function addAccident(string memory _niv, string memory _accident) public {
@@ -62,8 +89,20 @@ contract AutomobileRegistrationSystem{
         return car.accidentsList();
     }
 
-    function getCar(string memory _niv) public view returns(Car){
-        Car car = carFactory.carListMapping(_niv);
-        return car;
+    function addCarRapport(string memory _niv, string memory _rapport) public{
+        Car car = getCar(_niv);
+        car.addRapport(_rapport);
     }
+
+    function getCarRapport(string memory _niv) public view returns(string[] memory){
+        Car car = getCar(_niv);        
+        return car.getRapport();
+    }
+
+    function getCarInfos(string memory _niv) public view returns(string memory){
+        Car car = getCar(_niv);        
+        return car.getInfos();        
+    }
+
+
 }

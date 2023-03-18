@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 
+import "./Car.sol";
 pragma solidity >=0.6.0 <=0.9.0;
 
-import "./Car.sol";
 
 contract CarFactory{
 
@@ -12,8 +12,8 @@ contract CarFactory{
 
     mapping(string => Car) listCars;
 
-    function createCarMapping(string memory _niv) public{
-        car = new Car(_niv);
+    function createCar(string memory _niv,string memory _infos) public{
+        car = new Car(_niv,_infos);
         listCars[_niv] = car;
     }
 
