@@ -15,14 +15,35 @@ contract AutomobileRegistrationSystem{
     }
 
     modifier isDeployer(){
-        require(systemDeployer == msg.sender, "You're not the owner, aborting");
+        require(msg.sender == systemDeployer, "You're not the owner, aborting");
         _;
     }
 
-    modifier isManufacturer(bool hasAccess){
-        require(hasAccess, "Permission denied, you must be a manifactor!");
+    modifier isManufacturer(address _of, Role _role){ //Create or delete the car
+        require(canAccess[_of][_role], "Permission denied, you must be a manufacturer!");
         _;
     }
+
+    modifier isState(address _of, Role _role){ //Set owner (old and new) + Transaction infos
+        require(canAccess[_of][_role], "You don't have the previledges, aborting");
+        _;
+    }
+
+    modifier isCenter(address _of, Role _role){ //Create reports
+        require(canAccess[_of][_role], "Permission denied, center only!"); 
+        _;
+    }
+
+    modifier isInsurance(address _of, Role _role){ //Save accidents
+        require(canAccess[_of][_role], "Permission denied, insurance only!"); 
+        _;
+    }
+
+    modifier doesExist(string memory _niv) {
+        require(carFactory.carListMapping(_niv).doesExist(), "This car doesn't exist anymore");
+        _;
+    }
+
 
     address systemDeployer;
 
@@ -47,19 +68,20 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function createNewCar(string memory _niv, string memory _infos) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
+    function createNewCar(string memory _niv, string memory _infos) public /*isManufacturer(msg.sender, Role.Manufacturer)*/{
         carFactory.createCar(_niv, _infos);
     }
 
-    function getCar(string memory _niv) public view returns(Car){
+    function getCar(string memory _niv) private view returns(Car){
         Car car = carFactory.carListMapping(_niv);
         return car;
     }
 
-    function setCarOwner(string memory _niv, string memory _owner, string memory _transactionInfo) public{
+    function setCarOwner(string memory _niv, string memory _owner, string memory _transactionInfo, string memory _matriculation) public doesExist(_niv){
         Car car = getCar(_niv);
         car.setOwner(_owner);
         car.setTransaction(_transactionInfo);
+        car.setMatriculation(_matriculation);
     }
 
     function getCarOwner(string memory _niv) public view returns(string[] memory){
@@ -70,7 +92,7 @@ contract AutomobileRegistrationSystem{
         return getCar(_niv).getPreviousTransactions();
     }
 
-    function setCarSignalisation(string memory _niv, bool _signalisation) public{
+    function setCarSignalisation(string memory _niv, bool _signalisation) public doesExist(_niv){
         getCar(_niv).setSignalisation(_signalisation);
     }
 
@@ -78,7 +100,7 @@ contract AutomobileRegistrationSystem{
         return getCar(_niv).getSignalisation();
     }
 
-    function addAccident(string memory _niv, string memory _accident) public {
+    function addAccident(string memory _niv, string memory _accident) public doesExist(_niv){
         Car car = getCar(_niv);
         car.addAccident(_accident);
     }
@@ -88,7 +110,7 @@ contract AutomobileRegistrationSystem{
         return car.accidentsList();
     }
 
-    function addCarReport(string memory _niv, string memory _report) public{
+    function addCarReport(string memory _niv, string memory _report) public doesExist(_niv){
         Car car = getCar(_niv);
         car.addReport(_report);
     }
@@ -103,8 +125,12 @@ contract AutomobileRegistrationSystem{
         return car.getInfos();        
     }
 
-    function getCarAllInfos(string memory _niv) public view returns(string memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
+    function getCarAllInfos(string memory _niv) public view returns(bool, string memory, string[] memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
         return getCar(_niv).getAllInfos();
+    }
+
+    function destroyCar(string memory _niv) public doesExist(_niv){
+        return getCar(_niv).destroyCar();
     }
 
 }
