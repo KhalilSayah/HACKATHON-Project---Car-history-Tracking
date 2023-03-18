@@ -24,19 +24,4 @@ contract CarFactory{
     function carListMapping(string memory _niv) public view returns(Car){
         return Car(address(listCars[_niv]));
     }
-
-
-    //Using arrayList
-    
-    // Car[] listOfCars;
-    // function createCarArray(string memory _niv) public{
-    //     car = new Car(_niv);
-    //     listOfCars.push(car);
-    // }
-
-    // function carListArray(uint _index) public view returns(Car){
-    //     return Car(address(listOfCars[_index]));
-    // }
-
-    //Using mapping
 }

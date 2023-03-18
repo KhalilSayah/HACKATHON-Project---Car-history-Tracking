@@ -3,7 +3,6 @@
 pragma solidity >=0.6.0 <=0.9.0;
 
 import "./CarFactory.sol";
-//import "Accounts.sol";
 
 contract AutomobileRegistrationSystem{
 
@@ -49,14 +48,22 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function createCar(string memory _niv) public isManufacturer(canAccess[msg.sender][Role.Manufacturer]){
+    function createCar(string memory _niv) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
         carFactory.createCarMapping(_niv);
+    }
+
+    function addAccident(string memory _niv, string memory _accident) public {
+        Car car = getCar(_niv);
+        car.addAccident(_accident);
+    }
+
+    function getAccidentsList(string memory _niv) public view returns (string[] memory){
+        Car car = getCar(_niv);        
+        return car.accidentsList();
     }
 
     function getCar(string memory _niv) public view returns(Car){
         Car car = carFactory.carListMapping(_niv);
         return car;
     }
-
-
 }
