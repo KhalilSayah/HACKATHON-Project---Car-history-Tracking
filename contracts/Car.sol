@@ -7,12 +7,12 @@ contract Car{
     string niv;
     string infos;
     string owner;
-    string[] rapports;
+    string[] reports;
     string[] accidents;
     string[] cacheOwnersList;
 
-    uint price;
-    uint[] listPreviousPrices;
+    string transaction;
+    string[] listPreviousTransactions;
     
     bool exists;
     bool signalisation;
@@ -36,12 +36,12 @@ contract Car{
         return accidents;
     }
 
-    function addRapport(string memory _rapport) public{
-        rapports.push(_rapport);
+    function addReport(string memory _rapport) public{
+        reports.push(_rapport);
     }
 
-    function getRapport() public view returns(string[] memory){
-        return rapports;
+    function getReport() public view returns(string[] memory){
+        return reports;
     }
 
     function setOwner(string memory _owner) public{
@@ -53,13 +53,13 @@ contract Car{
         return cacheOwnersList;
     }
 
-    function setPrice(uint _price) public{
-        price = _price;
-        listPreviousPrices.push(price);
+    function setTransaction(string memory _transaction) public{
+        transaction = _transaction;
+        listPreviousTransactions.push(transaction);
     }
 
-    function getPreviousPrices() public view returns(uint[] memory){
-        return listPreviousPrices;
+    function getPreviousTransactions() public view returns(string[] memory){
+        return listPreviousTransactions;
     }
 
     function setSignalisation(bool _signalisation) public{
@@ -70,8 +70,8 @@ contract Car{
         return signalisation;
     }
 
-    function getAllInfos() public view returns(string memory, string[] memory, string[] memory, string[] memory, uint[] memory, bool){
-        return (infos, accidents, cacheOwnersList, rapports, listPreviousPrices, signalisation);
+    function getAllInfos() public view returns(string memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
+        return (infos, accidents, cacheOwnersList, reports, listPreviousTransactions, signalisation);
     }
 
 }

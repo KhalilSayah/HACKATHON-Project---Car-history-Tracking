@@ -56,18 +56,18 @@ contract AutomobileRegistrationSystem{
         return car;
     }
 
-    function setCarOwner(string memory _niv, string memory _owner, uint _boughtForPrice) public{
+    function setCarOwner(string memory _niv, string memory _owner, string memory _transactionInfo) public{
         Car car = getCar(_niv);
         car.setOwner(_owner);
-        car.setPrice(_boughtForPrice);
+        car.setTransaction(_transactionInfo);
     }
 
     function getCarOwner(string memory _niv) public view returns(string[] memory){
         return getCar(_niv).getOwnerList();
     }
 
-    function getCarPreviousPrices(string memory _niv) public view returns(uint[] memory){
-        return getCar(_niv).getPreviousPrices();
+    function getCarPreviousTransactions(string memory _niv) public view returns(string[] memory){
+        return getCar(_niv).getPreviousTransactions();
     }
 
     function setCarSignalisation(string memory _niv, bool _signalisation) public{
@@ -88,14 +88,14 @@ contract AutomobileRegistrationSystem{
         return car.accidentsList();
     }
 
-    function addCarRapport(string memory _niv, string memory _rapport) public{
+    function addCarReport(string memory _niv, string memory _report) public{
         Car car = getCar(_niv);
-        car.addRapport(_rapport);
+        car.addReport(_report);
     }
 
-    function getCarRapport(string memory _niv) public view returns(string[] memory){
+    function getCarReport(string memory _niv) public view returns(string[] memory){
         Car car = getCar(_niv);        
-        return car.getRapport();
+        return car.getReport();
     }
 
     function getCarInfos(string memory _niv) public view returns(string memory){
@@ -103,7 +103,7 @@ contract AutomobileRegistrationSystem{
         return car.getInfos();        
     }
 
-    function getCarAllInfos(string memory _niv) public view returns(string memory, string[] memory, string[] memory, string[] memory, uint[] memory, bool){
+    function getCarAllInfos(string memory _niv) public view returns(string memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
         return getCar(_niv).getAllInfos();
     }
 
