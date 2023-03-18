@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 
+import "./CarFactory.sol";
 pragma solidity >=0.6.0 <=0.9.0;
 
-import "./CarFactory.sol";
 
 contract AutomobileRegistrationSystem{
 
@@ -35,7 +35,6 @@ contract AutomobileRegistrationSystem{
     constructor(){
         systemDeployer = msg.sender;    
         carFactory = new CarFactory();
-        //account = new Accounts();
     }
 
 
@@ -48,8 +47,8 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function createCar(string memory _niv) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
-        carFactory.createCarMapping(_niv);
+    function createCar(string memory _niv, string memory _infos) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
+        carFactory.createCarMapping(_niv, _infos);
     }
 
     function addAccident(string memory _niv, string memory _accident) public {
@@ -60,6 +59,21 @@ contract AutomobileRegistrationSystem{
     function getAccidentsList(string memory _niv) public view returns (string[] memory){
         Car car = getCar(_niv);        
         return car.accidentsList();
+    }
+
+    function addCarRapport(string memory _niv, string memory _rapport) public{
+        Car car = getCar(_niv);
+        car.addRapport(_rapport);
+    }
+
+    function getCarRapport(string memory _niv) public view returns(string[] memory){
+        Car car = getCar(_niv);        
+        return car.getRapport();
+    }
+
+    function getCarInfos(string memory _niv) public view returns(string memory){
+        Car car = getCar(_niv);        
+        return car.getInfos();        
     }
 
     function getCar(string memory _niv) public view returns(Car){

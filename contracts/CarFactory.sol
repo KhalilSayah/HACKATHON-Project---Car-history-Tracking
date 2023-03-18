@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 
+import "./Car.sol";
 pragma solidity >=0.6.0 <=0.9.0;
 
-import "./Car.sol";
 
 contract CarFactory{
 
