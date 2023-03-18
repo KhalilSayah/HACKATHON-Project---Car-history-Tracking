@@ -1,0 +1,42 @@
+//SPDX-License-Identifier: MIT
+
+pragma solidity >=0.6.0 <=0.9.0;
+
+import "./Car.sol";
+
+contract CarFactory{
+
+    Car car;
+    string niv;
+    //Using mapping
+
+    mapping(string => Car) listCars;
+
+    function createCarMapping(string memory _niv) public{
+        car = new Car(_niv);
+        listCars[_niv] = car;
+    }
+
+    // function destroyCar(string memory _niv) public{
+    //     Car(address(listCars[_niv]).exists = false;
+    // }
+
+    function carListMapping(string memory _niv) public view returns(Car){
+        return Car(address(listCars[_niv]));
+    }
+
+
+    //Using arrayList
+    
+    // Car[] listOfCars;
+    // function createCarArray(string memory _niv) public{
+    //     car = new Car(_niv);
+    //     listOfCars.push(car);
+    // }
+
+    // function carListArray(uint _index) public view returns(Car){
+    //     return Car(address(listOfCars[_index]));
+    // }
+
+    //Using mapping
+}
