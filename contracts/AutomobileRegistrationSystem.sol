@@ -106,11 +106,11 @@ contract AutomobileRegistrationSystem{
         return getCar(_niv).getPreviousTransactions();
     }
 
-    function setCarSignalisation(string memory _niv, bool _signalisation) public isNotBlank(_niv) doesExist(_niv) /*isDeployer()*/{
+    function setCarSignalisation(string memory _niv, string memory _signalisation) public isNotBlank(_niv) doesExist(_niv) /*isDeployer()*/{
         getCar(_niv).setSignalisation(_signalisation);
     }
 
-    function getCarSignalisation(string memory _niv) public view isNotBlank(_niv) returns(bool){
+    function getCarSignalisation(string memory _niv) public view isNotBlank(_niv) returns(string[] memory){
         return getCar(_niv).getSignalisation();
     }
 
@@ -141,9 +141,9 @@ contract AutomobileRegistrationSystem{
         return car.getInfos();        
     }
 
-    function getCarAllInfos(string memory _niv) public view isNotBlank(_niv) returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
-        return getCar(_niv).getAllInfos();
-    }
+    // function getCarAllInfos(string memory _niv) public view isNotBlank(_niv) returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
+    //     return getCar(_niv).getAllInfos();
+    // }
 
     function destroyCar(string memory _niv) public isNotBlank(_niv) doesExist(_niv) /*isManufacturer(msg.sender, Role.Manufacturer)*/{
         return getCar(_niv).destroyCar();

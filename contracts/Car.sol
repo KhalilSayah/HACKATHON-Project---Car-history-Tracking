@@ -12,12 +12,14 @@ contract Car{
     string[] reports;
     string[] accidents;
     address[] cacheOwnersList;
+    string signalisation;
+    string[] signalisationsList;
 
     string transaction;
     string[] listPreviousTransactions;
     
     bool exists;
-    bool signalisation;
+    
 
 
 
@@ -72,17 +74,18 @@ contract Car{
         return listPreviousTransactions;
     }
 
-    function setSignalisation(bool _signalisation) public{
+    function setSignalisation(string memory _signalisation) public{
         signalisation = _signalisation;
+        signalisationsList.push(signalisation);
     }
 
-    function getSignalisation() public view returns(bool){
-        return signalisation;
+    function getSignalisation() public view returns(string[] memory){
+        return signalisationsList;
     }
 
-    function getAllInfos() public view returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
-        return (exists, infos, accidents, cacheOwnersList, cacheMatriculationsList ,reports, listPreviousTransactions, signalisation);
-    }
+    // function getAllInfos() public view returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
+    //     return (exists, infos, accidents, cacheOwnersList, cacheMatriculationsList ,reports, listPreviousTransactions, signalisation);
+    // }
 
     function doesExist() public view returns(bool ){
         return exists;

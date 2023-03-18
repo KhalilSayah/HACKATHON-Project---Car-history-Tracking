@@ -1,0 +1,41 @@
+{"InfoCar" : {
+    "NIV":"11111",
+    "Date":"25/06/2001",
+    "Fabrication":"Renault",
+    "Modele":"R6",
+    "Type_Carrosserie":"Berlin",
+    "Annee_Production":"2018",
+    "Carburant":"Diesel",
+    "Transmition":"Auto",
+    "Moteur":"Puissant"
+    },
+    "Crashdata" :{
+    "NIV":"11111",
+    "Date":"26/06/2001",
+    "Where":"Algerie",
+    "Damage_emp":"Par-brise",
+    "Estimated_Price":"10000"
+},
+    "RepportData" : {
+    "NIV":"11111",
+    "Date":"27/06/2001",
+    "KM":"10000",
+    "Entretiens":["Entretien Vidange","Pression Pneux"],
+    "Timestamp":"30 min"
+},
+    "SignalisationData" : {
+    "NIV":"11111",
+    "Date":"28/06/2001",
+    "Where":"Algeria",
+    "Source":"Police",
+    "Status":"True"
+},
+    "TransferData" : {
+ "NIV":"11111",
+ "Date":"31/12/2001",
+ "Amount" :"1000000",
+ "Devise":"DZ",
+ "Previous_Owner":"0x123456789",
+ "New_Owner":"0x963852741"  
+}
+}
