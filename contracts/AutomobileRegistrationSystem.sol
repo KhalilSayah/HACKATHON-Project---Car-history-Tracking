@@ -39,8 +39,13 @@ contract AutomobileRegistrationSystem{
         _;
     }
 
-    modifier doesExist(string memory _niv) {
+    modifier doesExist(string memory _niv){
         require(carFactory.carListMapping(_niv).doesExist(), "This car doesn't exist anymore");
+        _;
+    }
+
+    modifier isNotBlank(string memory _niv){
+        require(keccak256(bytes(_niv)) != keccak256(bytes("")), "Please enter a NIV");
         _;
     }
 
@@ -48,7 +53,6 @@ contract AutomobileRegistrationSystem{
     address systemDeployer;
 
     CarFactory carFactory;
-    //Accounts account;
 
     mapping(address => mapping(Role => bool)) canAccess; //Instead of creating a mapping for each role, I thought it could be a great idea to create only one mapping of a mapping that sets the role of every address given
 
@@ -68,68 +72,80 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function createNewCar(string memory _niv, string memory _infos) public /*isManufacturer(msg.sender, Role.Manufacturer)*/{
+    function isNivUsed(string memory _niv) public view returns(bool) /*isManufacturer(msg.sender, Role.Manufacturer)*/{
+        bool avaibility = carFactory.getNivAvaibility(_niv);
+        return avaibility;
+    }
+
+    function createNewCar(string memory _niv, string memory _infos) public isNotBlank(_niv)/*isManufacturer(msg.sender, Role.Manufacturer)*/{
+        require(keccak256(bytes(_infos)) != keccak256(bytes("")), "The infos section cannot be blank");
         carFactory.createCar(_niv, _infos);
     }
 
-    function getCar(string memory _niv) private view returns(Car){
+    function getCar(string memory _niv) private view isNotBlank(_niv) returns(Car){
         Car car = carFactory.carListMapping(_niv);
         return car;
     }
 
-    function setCarOwner(string memory _niv, string memory _owner, string memory _transactionInfo, string memory _matriculation) public doesExist(_niv){
+    function setCarOwner(string memory _niv, address _owner, string memory _transactionInfo, string memory _matriculation) public isNotBlank(_niv) doesExist(_niv)/*isSate(msg.sender, Role.Manufacturer)*/{
+        require(_owner != address(0), "The infos section cannot be blank");
+        require(keccak256(bytes(_transactionInfo)) != keccak256(bytes("")), "Please fill the transaction infos section");
+        require(keccak256(bytes(_matriculation)) != keccak256(bytes("")), "The matriculation section cannot be blank");
+
         Car car = getCar(_niv);
         car.setOwner(_owner);
         car.setTransaction(_transactionInfo);
         car.setMatriculation(_matriculation);
     }
 
-    function getCarOwner(string memory _niv) public view returns(string[] memory){
+    function getCarOwner(string memory _niv) public view isNotBlank(_niv) returns(address[] memory){
         return getCar(_niv).getOwnerList();
     }
 
-    function getCarPreviousTransactions(string memory _niv) public view returns(string[] memory){
+    function getCarPreviousTransactions(string memory _niv) public view isNotBlank(_niv) returns(string[] memory){
         return getCar(_niv).getPreviousTransactions();
     }
 
-    function setCarSignalisation(string memory _niv, bool _signalisation) public doesExist(_niv){
+    function setCarSignalisation(string memory _niv, bool _signalisation) public isNotBlank(_niv) doesExist(_niv) /*isDeployer()*/{
         getCar(_niv).setSignalisation(_signalisation);
     }
 
-    function getCarSignalisation(string memory _niv) public view returns(bool){
+    function getCarSignalisation(string memory _niv) public view isNotBlank(_niv) returns(bool){
         return getCar(_niv).getSignalisation();
     }
 
-    function addAccident(string memory _niv, string memory _accident) public doesExist(_niv){
+    function addAccident(string memory _niv, string memory _accident) public isNotBlank(_niv) doesExist(_niv) /*isInsurance(msg.sender, Role.Manufacturer)*/{
+        require(keccak256(bytes(_accident)) != keccak256(bytes("")), "Please provide more infos");
         Car car = getCar(_niv);
         car.addAccident(_accident);
     }
 
-    function getAccidentsList(string memory _niv) public view returns (string[] memory){
+    function getAccidentsList(string memory _niv) public view isNotBlank(_niv) returns (string[] memory){
         Car car = getCar(_niv);        
         return car.accidentsList();
     }
 
-    function addCarReport(string memory _niv, string memory _report) public doesExist(_niv){
+    function addCarReport(string memory _niv, string memory _report) public isNotBlank(_niv) doesExist(_niv) /*isCenter(msg.sender, Role.Manufacturer)*/{
+        require(keccak256(bytes(_report)) != keccak256(bytes("")), "Please provide a correct report");
         Car car = getCar(_niv);
         car.addReport(_report);
     }
 
-    function getCarReport(string memory _niv) public view returns(string[] memory){
+    function getCarReport(string memory _niv) public view isNotBlank(_niv) returns(string[] memory){
         Car car = getCar(_niv);        
         return car.getReport();
     }
 
-    function getCarInfos(string memory _niv) public view returns(string memory){
+    function getCarInfos(string memory _niv) public view isNotBlank(_niv) returns(string memory){
         Car car = getCar(_niv);        
         return car.getInfos();        
     }
 
-    function getCarAllInfos(string memory _niv) public view returns(bool, string memory, string[] memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
+    function getCarAllInfos(string memory _niv) public view isNotBlank(_niv) returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
         return getCar(_niv).getAllInfos();
     }
 
-    function destroyCar(string memory _niv) public doesExist(_niv){
+    function destroyCar(string memory _niv) public isNotBlank(_niv) doesExist(_niv) /*isManufacturer(msg.sender, Role.Manufacturer)*/{
         return getCar(_niv).destroyCar();
     }
 

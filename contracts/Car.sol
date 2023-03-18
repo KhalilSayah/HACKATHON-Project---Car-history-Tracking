@@ -6,12 +6,12 @@ contract Car{
 
     string niv;
     string infos;
-    string owner;
+    address owner;
     string matriculation;
     string[] cacheMatriculationsList;
     string[] reports;
     string[] accidents;
-    string[] cacheOwnersList;
+    address[] cacheOwnersList;
 
     string transaction;
     string[] listPreviousTransactions;
@@ -31,7 +31,7 @@ contract Car{
         return infos;
     }
 
-    function addAccident(string memory _accident) public {
+    function addAccident(string memory _accident) public{
         accidents.push(_accident);
     }
 
@@ -47,17 +47,19 @@ contract Car{
         return reports;
     }
 
-    function setOwner(string memory _owner) public{
+    function setOwner(address _owner) public{
+        require(owner != _owner, "The old owner and new one can't be the same");
         owner = _owner;
         cacheOwnersList.push(owner);
     }
 
     function setMatriculation(string memory _matriculation) public{
+        require(keccak256(bytes(_matriculation)) != keccak256(bytes(matriculation)), "The old matriculation and new matriculation can't be the same");
         matriculation = _matriculation;
         cacheMatriculationsList.push(matriculation);
     }
 
-    function getOwnerList() public view returns(string[] memory){
+    function getOwnerList() public view returns(address[] memory){
         return cacheOwnersList;
     }
 
@@ -78,7 +80,7 @@ contract Car{
         return signalisation;
     }
 
-    function getAllInfos() public view returns(bool, string memory, string[] memory, string[] memory, string[] memory, string[] memory, string[] memory, bool){
+    function getAllInfos() public view returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
         return (exists, infos, accidents, cacheOwnersList, cacheMatriculationsList ,reports, listPreviousTransactions, signalisation);
     }
 
