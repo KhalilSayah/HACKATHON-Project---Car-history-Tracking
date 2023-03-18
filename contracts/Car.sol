@@ -5,14 +5,16 @@ pragma solidity >=0.6.0 <=0.9.0;
 contract Car{
 
     string niv;
-    bool exists;
-    string[] accidents;
-    string owner;
-    string[] cacheOwnersList;
     string infos;
+    string owner;
     string[] rapports;
+    string[] accidents;
+    string[] cacheOwnersList;
+
     uint price;
     uint[] listPreviousPrices;
+    
+    bool exists;
     bool signalisation;
 
 
@@ -66,6 +68,10 @@ contract Car{
 
     function getSignalisation() public view returns(bool){
         return signalisation;
+    }
+
+    function getAllInfos() public view returns(string memory, string[] memory, string[] memory, string[] memory, uint[] memory, bool){
+        return (infos, accidents, cacheOwnersList, rapports, listPreviousPrices, signalisation);
     }
 
 }

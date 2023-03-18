@@ -47,8 +47,7 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-
-    function createCar(string memory _niv, string memory _infos) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
+    function createNewCar(string memory _niv, string memory _infos) public /*isManufacturer(canAccess[msg.sender][Role.Manufacturer])*/{
         carFactory.createCar(_niv, _infos);
     }
 
@@ -104,5 +103,8 @@ contract AutomobileRegistrationSystem{
         return car.getInfos();        
     }
 
+    function getCarAllInfos(string memory _niv) public view returns(string memory, string[] memory, string[] memory, string[] memory, uint[] memory, bool){
+        return getCar(_niv).getAllInfos();
+    }
 
 }
