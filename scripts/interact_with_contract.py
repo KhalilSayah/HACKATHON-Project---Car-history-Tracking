@@ -297,7 +297,7 @@ def main():
     Rapport1 = AddRapport(system,Caccount,RepportData,create_car_template)
     RepportData2 = createRepport('11','13/04/2010','12000',['Entretien Vidange','Equilibrage'],'15 min')
     Rapport2 = AddRapport(system,Caccount,RepportData2,create_car_template)
-    RepportData3 = createRepport('11','13/09/2012','10000',['Entretien Vidange','Pression Pneux','scaner'],'30 min')
+    RepportData3 = createRepport('11','13/09/2012','100000',['Entretien Vidange','Pression Pneux','scaner'],'30 min')
     Rapport3 = AddRapport(system,Caccount,RepportData3,create_car_template)
     
 
