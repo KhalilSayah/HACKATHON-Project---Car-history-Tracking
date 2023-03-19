@@ -72,12 +72,12 @@ contract AutomobileRegistrationSystem{
         return canAccess[_of][_role];
     }
 
-    function isNivUsed(string memory _niv) public view returns(bool) /*isManufacturer(msg.sender, Role.Manufacturer)*/{
+    function isNivUsed(string memory _niv) public view isManufacturer(msg.sender, Role.Manufacturer) returns(bool){
         bool avaibility = carFactory.getNivAvaibility(_niv);
         return avaibility;
     }
 
-    function createNewCar(string memory _niv, string memory _infos) public isNotBlank(_niv)/*isManufacturer(msg.sender, Role.Manufacturer)*/{
+    function createNewCar(string memory _niv, string memory _infos) public isManufacturer(msg.sender, Role.Manufacturer) isNotBlank(_niv){
         require(keccak256(bytes(_infos)) != keccak256(bytes("")), "The infos section cannot be blank");
         carFactory.createCar(_niv, _infos);
     }
@@ -87,7 +87,7 @@ contract AutomobileRegistrationSystem{
         return car;
     }
 
-    function setCarOwner(string memory _niv, address _owner, string memory _transactionInfo, string memory _matriculation) public isNotBlank(_niv) doesExist(_niv)/*isSate(msg.sender, Role.Manufacturer)*/{
+    function setCarOwner(string memory _niv, address _owner, string memory _transactionInfo, string memory _matriculation) public isNotBlank(_niv) doesExist(_niv) isState(msg.sender, Role.State){
         require(_owner != address(0), "The infos section cannot be blank");
         require(keccak256(bytes(_transactionInfo)) != keccak256(bytes("")), "Please fill the transaction infos section");
         require(keccak256(bytes(_matriculation)) != keccak256(bytes("")), "The matriculation section cannot be blank");
@@ -106,7 +106,7 @@ contract AutomobileRegistrationSystem{
         return getCar(_niv).getPreviousTransactions();
     }
 
-    function setCarSignalisation(string memory _niv, string memory _signalisation) public isNotBlank(_niv) doesExist(_niv) /*isDeployer()*/{
+    function setCarSignalisation(string memory _niv, string memory _signalisation) public isNotBlank(_niv) doesExist(_niv) isDeployer{
         getCar(_niv).setSignalisation(_signalisation);
     }
 
@@ -114,7 +114,7 @@ contract AutomobileRegistrationSystem{
         return getCar(_niv).getSignalisation();
     }
 
-    function addAccident(string memory _niv, string memory _accident) public isNotBlank(_niv) doesExist(_niv) /*isInsurance(msg.sender, Role.Manufacturer)*/{
+    function addAccident(string memory _niv, string memory _accident) public isNotBlank(_niv) doesExist(_niv) isInsurance(msg.sender, Role.Insurance){
         require(keccak256(bytes(_accident)) != keccak256(bytes("")), "Please provide more infos");
         Car car = getCar(_niv);
         car.addAccident(_accident);
@@ -125,7 +125,7 @@ contract AutomobileRegistrationSystem{
         return car.accidentsList();
     }
 
-    function addCarReport(string memory _niv, string memory _report) public isNotBlank(_niv) doesExist(_niv) /*isCenter(msg.sender, Role.Manufacturer)*/{
+    function addCarReport(string memory _niv, string memory _report) public isNotBlank(_niv) doesExist(_niv) isCenter(msg.sender, Role.Insurance){
         require(keccak256(bytes(_report)) != keccak256(bytes("")), "Please provide a correct report");
         Car car = getCar(_niv);
         car.addReport(_report);
@@ -141,11 +141,11 @@ contract AutomobileRegistrationSystem{
         return car.getInfos();        
     }
 
-    // function getCarAllInfos(string memory _niv) public view isNotBlank(_niv) returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
-    //     return getCar(_niv).getAllInfos();
-    // }
+    function getCarAllInfos(string memory _niv) public view isNotBlank(_niv) returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, string[] memory){
+        return getCar(_niv).getAllInfos();
+    }
 
-    function destroyCar(string memory _niv) public isNotBlank(_niv) doesExist(_niv) /*isManufacturer(msg.sender, Role.Manufacturer)*/{
+    function destroyCar(string memory _niv) public isNotBlank(_niv) doesExist(_niv) isManufacturer(msg.sender, Role.Manufacturer){
         return getCar(_niv).destroyCar();
     }
 

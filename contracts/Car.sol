@@ -6,18 +6,20 @@ contract Car{
 
     string niv;
     string infos;
-    address owner;
+    string transaction;
     string matriculation;
+    string signalisation;
     string[] cacheMatriculationsList;
     string[] reports;
     string[] accidents;
+    string[] signalisationsList;
+    string[] listPreviousTransactions;
+
+    address owner;
     address[] cacheOwnersList;
     string signalisation;
     string[] signalisationsList;
 
-    string transaction;
-    string[] listPreviousTransactions;
-    
     bool exists;
     
 
@@ -83,9 +85,9 @@ contract Car{
         return signalisationsList;
     }
 
-    // function getAllInfos() public view returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, bool){
-    //     return (exists, infos, accidents, cacheOwnersList, cacheMatriculationsList ,reports, listPreviousTransactions, signalisation);
-    // }
+    function getAllInfos() public view returns(bool, string memory, string[] memory, address[] memory, string[] memory, string[] memory, string[] memory, string[] memory){
+        return (exists, infos, accidents, cacheOwnersList, cacheMatriculationsList, reports, listPreviousTransactions, signalisationsList);
+    }
 
     function doesExist() public view returns(bool ){
         return exists;
@@ -96,5 +98,4 @@ contract Car{
     }
 
 }
-
 
