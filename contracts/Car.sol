@@ -17,13 +17,9 @@ contract Car{
 
     address owner;
     address[] cacheOwnersList;
-    string signalisation;
-    string[] signalisationsList;
 
     bool exists;
     
-
-
 
     constructor(string memory _niv, string memory _infos){
         niv = _niv;
@@ -98,4 +94,3 @@ contract Car{
     }
 
 }
-
