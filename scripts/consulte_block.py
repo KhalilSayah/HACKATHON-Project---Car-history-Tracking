@@ -38,7 +38,7 @@ def returnSignalisation(system,_NIV):
     return _Signalisation
 
 def getlink(hash,Lists):
-    listink = Lists
+    listink = []
     endpoint = 'https://gateway.pinata.cloud/ipfs/'
     tuple_obj = ast.literal_eval(hash)
     for element in tuple_obj:
@@ -46,24 +46,57 @@ def getlink(hash,Lists):
         listink.append(link)
     return listink
 
+def requestdata(url):
+    response= requests.get(url=url)
+    print(response.text)
+    data = json.loads(response.text)
+    return data
+def getlistdatad(List):
+    data = []
+    for link in List:
+        data.append(requestdata(link))
+    return data
+
+def _wellformatedjson(Links):
+    pass
+
+
 
 def main():
-    Links= []
+    Links= {
+        "InfoCar":'',
+        "Crashdata": [],
+        "RepportData" : [],
+        "SignalisationData" : [],
+        "TransferData" : []
+    }
     _NIV = '7'
     system = Contract.from_abi('AutomobileRegistrationSystem', SYS_ADD, AutomobileRegistrationSystem.abi)
     cars = returnCarAdd(system,_NIV)
-    Links.append('https://gateway.pinata.cloud/ipfs/'+cars)
+    Links["InfoCar"] = ('https://gateway.pinata.cloud/ipfs/'+cars)
     crashes = returnCarCrashes(system,_NIV)
-    Links= getlink(str(crashes),Links)
+    Links ["Crashdata"]= getlink(str(crashes),Links)
 
     repport = returnRapport(system,_NIV)
-    Links= getlink(str(repport),Links)
+    Links["RepportData"]=getlink(str(repport),Links)
     
     transactions = returnTransactions(system,_NIV)
-    Links= getlink(str(transactions),Links)
+    Links["TransferData"] = getlink(str(transactions),Links)
     
     signalisations = returnSignalisation(system,_NIV)
-    Links= getlink(str(signalisations),Links)
-    
+    Links["SignalisationData"] = getlink(str(signalisations),Links)
+
+    dump = Links
+    dump["InfoCar"] = requestdata(Links["InfoCar"])
+    dump["Crashdata"] = getlistdatad(Links["Crashdata"])
+    dump["RepportData"] = getlistdatad(Links["RepportData"])
+    #dump["TransferData"] = getlistdatad(Links["TransferData"])
+    dump["SignalisationData"] = getlistdatad(Links["SignalisationData"])
+
+    print(dump)
+
     print(Links)
+
+    
+    
 
