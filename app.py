@@ -60,6 +60,14 @@ def getlistdatad(List):
         data.append(requestdata(link))
     return data
 
+def upload_json_file(data):
+    filename= data['InfoCar']['NIV'] + "_chart.json"
+    if not os.path.exists(filename):
+        with open(filename, "w") as outfile:
+            json.dump(data, outfile)
+    print('json uploaded is done for the chart!')        
+    return filename
+
 def getdata(_NIV,system):
     Links= {
         "InfoCar":'',
@@ -106,6 +114,9 @@ def getdata(_NIV,system):
     dump["dts"] = dts
     print(dump["dts"])
 
+
+    file_name = upload_json_file(dump)
+
     return dump
 
 
@@ -142,4 +153,4 @@ def rapport():
     return render_template('rapport.html', data = data)
 
 if __name__ == '__main__':
-    app.run(debug =True)
+    app.run(debug =True) 
