@@ -56,6 +56,7 @@ contract AutomobileRegistrationSystem{
 
     mapping(address => mapping(Role => bool)) canAccess; //Instead of creating a mapping for each role, I thought it could be a great idea to create only one mapping of a mapping that sets the role of every address given
 
+    mapping(string => address) createCarAddress;
     
     constructor(){
         systemDeployer = msg.sender;    
@@ -82,7 +83,15 @@ contract AutomobileRegistrationSystem{
         carFactory.createCar(_niv, _infos);
     }
 
-    function getCar(string memory _niv) private view isNotBlank(_niv) returns(Car){
+    function storeCarAddress(string memory _niv, address _addingCar) public{
+        createCarAddress[_niv] = _addingCar;
+    }
+
+    function getStoredAddress(string memory _niv) public view returns(address){
+        return createCarAddress[_niv];
+    }
+
+    function getCar(string memory _niv) public view isNotBlank(_niv) returns(Car){
         Car car = carFactory.carListMapping(_niv);
         return car;
     }
@@ -125,7 +134,7 @@ contract AutomobileRegistrationSystem{
         return car.accidentsList();
     }
 
-    function addCarReport(string memory _niv, string memory _report) public isNotBlank(_niv) doesExist(_niv) isCenter(msg.sender, Role.Insurance){
+    function addCarReport(string memory _niv, string memory _report) public isNotBlank(_niv) doesExist(_niv) isCenter(msg.sender, Role.Center){
         require(keccak256(bytes(_report)) != keccak256(bytes("")), "Please provide a correct report");
         Car car = getCar(_niv);
         car.addReport(_report);

@@ -30,7 +30,8 @@ def returnRapport(system,_NIV):
 
 def returnTransactions(system,_NIV):
     
-    _TransactionsList = system.getCarOwner(_NIV)
+    _TransactionsList = system.getCarPreviousTransactions(_NIV)
+    print(_TransactionsList)
     return _TransactionsList
 
 def returnSignalisation(system,_NIV):
@@ -48,7 +49,7 @@ def getlink(hash,Lists):
 
 def requestdata(url):
     response= requests.get(url=url)
-    print(response.text)
+    #print(response.text)
     data = json.loads(response.text)
     return data
 def getlistdatad(List):
@@ -68,11 +69,13 @@ def main():
         "Crashdata": [],
         "RepportData" : [],
         "SignalisationData" : [],
-        "TransferData" : []
+        "TransferData" : [],
+        "Car_Address" : ''
     }
-    _NIV = '10'
+    _NIV = '11'
     system = Contract.from_abi('AutomobileRegistrationSystem', SYS_ADD, AutomobileRegistrationSystem.abi)
     cars = returnCarAdd(system,_NIV)
+    print(cars)
     Links["InfoCar"] = ('https://gateway.pinata.cloud/ipfs/'+cars)
     crashes = returnCarCrashes(system,_NIV)
     Links ["Crashdata"]= getlink(str(crashes),Links)
@@ -86,14 +89,17 @@ def main():
     signalisations = returnSignalisation(system,_NIV)
     Links["SignalisationData"] = getlink(str(signalisations),Links)
 
+    
+
     dump = Links
     dump["InfoCar"] = requestdata(Links["InfoCar"])
     dump["Crashdata"] = getlistdatad(Links["Crashdata"])
     dump["RepportData"] = getlistdatad(Links["RepportData"])
     dump["TransferData"] = getlistdatad(Links["TransferData"])
     dump["SignalisationData"] = getlistdatad(Links["SignalisationData"])
+    #dump["Car_Address"] = system.getStoredAddress(_NIV)
 
-    print(dump)
+    return dump
 
 
     

@@ -2,3 +2,13 @@ dotenv : .env
 
 wallets:
   from_key: ${PRIVATE_KEY}
+  Insurance : ${INSURANCE_KEY}
+  Manufacture: ${MANUFACTURE_KEY}
+  State : ${STATE_KEY}
+  Center : ${CENTER_KEY}
+  public_keys:
+    admin: ${PUBLIC_KEY}
+    Insurance : ${INSURANCE_PUBLIC}
+    Manufacture: ${MANUFACTURE_PUBLIC}
+    State : ${STATE_PUBLIC}
+    Center : ${CENTER_PUBLIC}
