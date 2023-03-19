@@ -167,11 +167,8 @@ def setup_roles(system,account):
     system.setRole(config["wallets"]["public_keys"]['Insurance'],3,1,{"from":account})
     print("********** Accounts have a Roles now ! **************")
 
-
-
-def main():
-    ## FROM FORMS
-    InfoCar = {
+def createInfoCar(_NIV,_date,_fabrication,_modele,_carro,_annee,_carburant,_transmition,_moteur):
+    output = {
     "NIV":"11",
     "Date":"25/06/2001",
     "Fabrication":"Renault",
@@ -182,28 +179,67 @@ def main():
     "Transmition":"Auto",
     "Moteur":"Puissant"
     }
-    Crashdata = {
+    output['NIV'] = _NIV
+    output['Date'] = _date
+    output['Fabrication'] = _fabrication
+    output['Modele'] = _modele
+    output['Type_Carrosserie'] = _carro
+    output['Annee_Production'] = _annee
+    output['Carburant'] = _carburant
+    output['Transmition'] = _transmition
+    output['Transmition'] = _moteur
+    return output
+
+def createcrash(_NIV,_date,_where,_damage,_price):
+    output = {
     "NIV":"11",
     "Date":"26/06/2001",
     "Where":"Algerie",
     "Damage_emp":"Par-brise",
     "Estimated_Price":"10000"
-}
-    RepportData = {
+    }
+    output['NIV'] = _NIV
+    output['Date'] = _date
+    output['Where'] = _where
+    output['Damage_emp'] = _damage
+    output['Estimated_Price'] = _price
+    
+    return output
+
+def createRepport(_NIV,_date,_km,_entretiens,_time):
+    output = {
     "NIV":"11",
     "Date":"27/06/2001",
     "KM":"10000",
     "Entretiens":['Entretien Vidange','Pression Pneux'],
     "Timestamp":"30 min"
 }
-    SignalisationData = {
+    output['NIV'] = _NIV
+    output['Date'] = _date
+    output['KM'] = _km
+    output['Entretiens'] = _entretiens
+    output['Timestamp'] = _time
+    
+    return output
+
+def createSignalisation(_NIV,_date,_where,_source,_status):
+    output = {
     "NIV":"11",
     "Date":"28/06/2001",
     "Where":"Algeria",
     "Source":"Police",
     "Status":"True"
 }
-    TransferData = {
+    output['NIV'] = _NIV
+    output['Date'] = _date
+    output['Where'] = _where
+    output['Source'] = _source
+    output['Status'] = _status
+    
+    return output
+
+def createTransfere(_NIV,_date,_amount,_devise,_previous,_new):
+    output = {
     "NIV":"11",
     "Date":"31/12/2001",
     "Amount" :"1000000",
@@ -211,6 +247,19 @@ def main():
     "Previous_Owner":"0x123456789",
     "New_Owner":"0x963852741"  
     }
+    output['NIV'] = _NIV
+    output['Date'] = _date
+    output['Amount'] = _amount
+    output['Devise'] = _devise
+    output['Previous_Owner'] = _previous
+    output['New_Owner'] = _new
+    
+    return output
+
+
+
+def main():
+    
     ###############################
 
     system = Contract.from_abi('AutomobileRegistrationSystem', SYS_ADD, AutomobileRegistrationSystem.abi)
@@ -219,21 +268,46 @@ def main():
     setup_roles(system,account)
 
     Maccount = setup_account('0')
+    InfoCar = createInfoCar('11','25/06/2001','Renault','R6','Berlin','2018','Diesel','Auto','Puissant')
     Car1 = AddCar(system, Maccount, InfoCar,create_car_template)
+    ## FROM FORMS
+    
     #system.storeCarAddress(InfoCar["NIV"],Car1.new_contracts,{"from":account})
     
     Iaccount = setup_account('3')
+    Crashdata = createcrash('11','25/29/2018','Algerie','Par-Brise','10000')
     Crash1 = AddCrash(system, Iaccount, Crashdata,create_car_template)
+    Crashdata2 = createcrash('11','01/01/2023','Algerie','Carrosserie','12000')
+    Crash2 = AddCrash(system, Iaccount, Crashdata2,create_car_template)
+    Crashdata3 = createcrash('11','01/06/2023','Algerie','Feux','3000')
+    Crash3 = AddCrash(system, Iaccount, Crashdata3,create_car_template)
+    
+    
 
     account = get_account()
+    SignalisationData=createSignalisation('11','31/12/2001','Algeria','Police','True')
     Signalisation1 = UpdateSignalisation(system,account,SignalisationData,create_car_template)
+    SignalisationData2=createSignalisation('11','04/04/2012','Roumanie','Gendarmerie','True')
+    Signalisation2 = UpdateSignalisation(system,account,SignalisationData2,create_car_template)
+    
+    
 
     Caccount = setup_account('2')
+    RepportData = createRepport('11','13/04/2009','10000',['Entretien Vidange','Pression Pneux'],'30 min')
     Rapport1 = AddRapport(system,Caccount,RepportData,create_car_template)
+    RepportData2 = createRepport('11','13/04/2010','12000',['Entretien Vidange','Equilibrage'],'15 min')
+    Rapport2 = AddRapport(system,Caccount,RepportData2,create_car_template)
+    RepportData3 = createRepport('11','13/09/2012','10000',['Entretien Vidange','Pression Pneux','scaner'],'30 min')
+    Rapport3 = AddRapport(system,Caccount,RepportData3,create_car_template)
+    
 
     Saccount = setup_account('1')
+    TransferData = createTransfere('11','13/04/2016','100000','DZ','0x123456789','0x963852741')
     Transfer1 = TransfereCar(system,Saccount,data=TransferData,Owner='0x52C9a652a12800Fe804dB8673d34936BaD9250E7',_matriculation='221222-113-13',template=create_car_template)
-   
+    TransferData2 = createTransfere('11','13/04/2018','250000','DZ','0x123456789','0x963852741')
+    Transfer2 = TransfereCar(system,Saccount,data=TransferData2,Owner='0xA0Be6213F7f951B7E2f9d625Ad8a76D675E80e3D',_matriculation='25852-113-13',template=create_car_template)
+    TransferData3 = createTransfere('11','13/04/2018','688000','DZ','0x123456789','0x963852741')
+    Transfer3 = TransfereCar(system,Saccount,data=TransferData3,Owner='0x8678D83e01F227F40A049C40ca9ec4fdB9608c54',_matriculation='221222-113-13',template=create_car_template)
 
     #Crash2 = AddCrash(system, account, data1,create_car_template)
     #Car2 = AddCar(system, account, data2,create_car_template)
