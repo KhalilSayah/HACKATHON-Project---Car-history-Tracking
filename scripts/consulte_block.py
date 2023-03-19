@@ -70,7 +70,7 @@ def main():
         "SignalisationData" : [],
         "TransferData" : []
     }
-    _NIV = '7'
+    _NIV = '10'
     system = Contract.from_abi('AutomobileRegistrationSystem', SYS_ADD, AutomobileRegistrationSystem.abi)
     cars = returnCarAdd(system,_NIV)
     Links["InfoCar"] = ('https://gateway.pinata.cloud/ipfs/'+cars)
@@ -90,12 +90,11 @@ def main():
     dump["InfoCar"] = requestdata(Links["InfoCar"])
     dump["Crashdata"] = getlistdatad(Links["Crashdata"])
     dump["RepportData"] = getlistdatad(Links["RepportData"])
-    #dump["TransferData"] = getlistdatad(Links["TransferData"])
+    dump["TransferData"] = getlistdatad(Links["TransferData"])
     dump["SignalisationData"] = getlistdatad(Links["SignalisationData"])
 
     print(dump)
 
-    print(Links)
 
     
     

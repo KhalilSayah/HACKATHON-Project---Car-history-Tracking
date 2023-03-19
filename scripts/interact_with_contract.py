@@ -107,9 +107,10 @@ def UpdateSignalisation(system,account,data,template):
     print('********* Signalisation Updated ************')
     return _Sign
 
-def TransfereCar(system,account,data,Owner,_matriculation):
+def TransfereCar(system,account,data,Owner,_matriculation,template):
     _NIV = data["NIV"]
-    _Transfere = system.setCarOwner(_NIV,Owner,data,_matriculation,{"from":account})
+    _hash = get_hash(data,template)
+    _Transfere = system.setCarOwner(_NIV,Owner,_hash,_matriculation,{"from":account})
     _Transfere.wait(1)
     print('********* Transaction Done ************')
     return _Transfere
@@ -142,7 +143,7 @@ def returnTransactions(system,data):
 def main():
     ## FROM FORMS
     InfoCar = {
-    "NIV":"7",
+    "NIV":"10",
     "Date":"25/06/2001",
     "Fabrication":"Renault",
     "Modele":"R6",
@@ -153,28 +154,28 @@ def main():
     "Moteur":"Puissant"
     }
     Crashdata = {
-    "NIV":"7",
+    "NIV":"10",
     "Date":"26/06/2001",
     "Where":"Algerie",
     "Damage_emp":"Par-brise",
     "Estimated_Price":"10000"
 }
     RepportData = {
-    "NIV":"7",
+    "NIV":"10",
     "Date":"27/06/2001",
     "KM":"10000",
     "Entretiens":['Entretien Vidange','Pression Pneux'],
     "Timestamp":"30 min"
 }
     SignalisationData = {
-    "NIV":"7",
+    "NIV":"10",
     "Date":"28/06/2001",
     "Where":"Algeria",
     "Source":"Police",
     "Status":"True"
 }
     TransferData = {
- "NIV":"7",
+ "NIV":"10",
  "Date":"31/12/2001",
  "Amount" :"1000000",
  "Devise":"DZ",
@@ -190,8 +191,8 @@ def main():
     Crash1 = AddCrash(system, account, Crashdata,create_car_template)
     Signalisation1 = UpdateSignalisation(system,account,SignalisationData,create_car_template)
     Rapport1 = AddRapport(system,account,RepportData,create_car_template)
-    Transfer1 = TransfereCar(system,account,TransferData,'0x52C9a652a12800Fe804dB8673d34936BaD9250E7','221222-113-13')
-
+    Transfer1 = TransfereCar(system,account,TransferData,'0x52C9a652a12800Fe804dB8673d34936BaD9250E7','221222-113-13',create_car_template)
+   
 
     #Crash2 = AddCrash(system, account, data1,create_car_template)
     #Car2 = AddCar(system, account, data2,create_car_template)
