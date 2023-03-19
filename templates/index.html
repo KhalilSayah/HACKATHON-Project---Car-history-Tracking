@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.rtl.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.rtl.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-grid.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-grid.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-grid.rtl.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-grid.rtl.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-reboot.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-reboot.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-reboot.rtl.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-utilities.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-utilities.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-utilities.rtl.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/bootstrap-utilities.rtl.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/master.css') }}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="Page_top">
+        <div class="Page_top__h8pt8">
+            <div></div>
+            <div></div>
+            <div>
+                <header class="Header_root__l5VTQ">
+                    <div class="Container_root__rNzvL Header_container__BKAYt">
+                        <div class="Logo_root__4WTbI Header_logo__vHf_w">
+                            <a href="/fr" class="Logo_link__X8gK6" data-testid="Link-innerLink">
+                                <div class="Logo_image__q2gce">
+                                    <img alt="carVertical" srcset="/logo.svg 1x, /logo.svg 2x" src="/logo.svg" width="180" height="24" decoding="async" data-nimg="future" style="color: transparent;">
+                                </div>
+                                <div class="Logo_suffix__UAk5c"></div>
+                            </a>
+                        </div>
+                        <div class="Header_gap__K0LAs"></div>
+                        <div class="ReportNav_root__uGf3H ReportNav_expandable__mZ54O ReportPage_reportNavHeader__FtECJ">
+                            <ul class="ReportNav_content__VtP6b" style="top: 154.875px;">
+                                <li class="ReportNav_item__n4OrW ReportNav_itemActive__smi9F">
+                                    <a href="/fr/exemple-de-rapport#vehicle" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M9.157 16v-4.562H6.876V16H.033V8.125a1 1 0 0 1 .28-.694L7.224.277A1 1 0 0 1 8.652.27l7.06 7.16a1 1 0 0 1 .288.7V16H9.157zm1.14-1.135h4.567v-6.66L8.016 1.32 1.158 8.175v6.69h4.577v-4.062a.5.5 0 0 1 .5-.5h3.562a.5.5 0 0 1 .5.5v4.062z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Résumé</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#activity" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="m9.47 13.882-2.222-5.31-1.312-3.147-2.164 3.832a.2.2 0 0 1-.174.102H.5a.5.5 0 0 1-.5-.5v-.574a.5.5 0 0 1 .5-.5h2.235l3.227-5.688a.2.2 0 0 1 .358.021l2.45 5.868 1.224 2.896 2.144-3.013a.2.2 0 0 1 .163-.084H15.5a.5.5 0 0 1 .5.5v.574a.5.5 0 0 1-.5.5h-2.445L9.818 13.92a.2.2 0 0 1-.348-.038z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Activité localisée</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#theft" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M7.493 16c-1.891 0-3.124-.922-3.777-1.413-.653-.492-1.648-1.81-2.11-3.017C.836 11.305 0 10.316 0 9.224c0-1.102.509-2.025 1.19-2.258a.2.2 0 0 1 .042-.074c.101-.498.246-.976.43-1.43-.017.027-.035.046-.053.05-.423.09-.679-.344-.679-.582 0-.24.302-1.43.68-1.64.114-.064.275-.179.51-.317C2.515 1.87 4.763.05 7.494 0c2.738.042 4.992 1.868 5.386 2.972.236.138.397.254.512.318.377.21.679 1.398.679 1.64 0 .237-.256.67-.68.581-.017-.003-.035-.022-.052-.05.184.454.329.932.43 1.43a.2.2 0 0 1 .042.074c.681.233 1.19 1.156 1.19 2.258 0 1.092-.836 2.081-1.606 2.346-.462 1.206-1.588 2.513-2.11 3.017C10.76 15.09 9.385 16 7.494 16zm4.823-5.204a.451.451 0 0 0 .175.034c.5 0 1.178-.715 1.178-1.52 0-.678-.289-1.249-.68-1.41-.273.622-.941 1.469-2.02 1.658-1.453.254-2.156-.418-3.368-.418h-.047c-1.212 0-1.915.673-3.369.418-1.078-.188-1.747-1.035-2.02-1.657-.39.161-.679.731-.679 1.41 0 .805.678 1.52 1.178 1.52a.443.443 0 0 0 .174-.034c.677 2.399 2.537 3.96 4.734 3.996 2.201-.031 4.066-1.594 4.744-3.997zM7.494 6.749h.03c1.179-.008 1.431-.677 2.85-.882.933-.135 1.453-.04 1.856.237a7.246 7.246 0 0 0-.566-1.274c-1.062-.376-2.522-.877-4.14-.877h-.048c-1.618 0-3.078.502-4.14.878-.224.394-.414.82-.566 1.273.403-.276.923-.371 1.856-.236 1.419.205 1.671.874 2.85.881h.018zm3.129 1.599c.87-.127 1.207-.568 1.207-.894 0-.327-1.082-.828-1.912-.284-.83.543-1.609.799-1.609.77 0 .326 1.443.535 2.314.408zm-6.26-.049c.87.127 2.314-.082 2.314-.408 0 .029-.779-.227-1.61-.77-.83-.543-1.911-.042-1.911.284 0 .326.336.767 1.207.894z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Volé / Pas volé?</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#mileage" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M10.002 8a2 2 0 1 1-4 0H1.004a6.997 6.997 0 1 0 13.993 0h-4.995zM8 15.997A8 8 0 1 1 8 0a8 8 0 0 1 0 15.998zm-.029-6.714c.38 0 .75-.154 1.011-.422.382-.392.373-.856.37-1.356-.005-1.196-.011-2.393-.018-3.589 0-.134-.115-.216-.232-.216a.225.225 0 0 0-.197.11c-.568.951-1.133 1.903-1.713 2.847-.207.336-.509.746-.575 1.136-.105.614.336 1.251.955 1.432a1.519 1.519 0 0 0 .4.058zM12.5 6a.5.5 0 1 0-.001-1.001A.5.5 0 0 0 12.5 6zm-2-2a.5.5 0 1 0-.001-1.001A.5.5 0 0 0 10.5 4zm-7 2a.5.5 0 1 0-.001-1.001A.5.5 0 0 0 3.5 6zm2-2a.5.5 0 1 0-.001-1.001A.5.5 0 0 0 5.5 4zM8 3a.5.5 0 1 0-.001-1.001A.5.5 0 0 0 8 3zm-3 8h1.2v2H5v-2zm2.398 0h1.2v2h-1.2v-2zm2.399 0h1.199v2h-1.2v-2z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Kilométrage</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#maintenance" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="m8.326 11.38.877.878-.033.496a.5.5 0 0 1-.37.45l-.672.18a.5.5 0 0 1-.546-.207l-.405-.612a6.412 6.412 0 0 1-.959.002l-.41.612a.5.5 0 0 1-.545.204l-.673-.18a.5.5 0 0 1-.37-.45l-.049-.735a6.123 6.123 0 0 1-.824-.476l-.661.324a.5.5 0 0 1-.574-.095l-.493-.493a.5.5 0 0 1-.096-.574l.325-.661a6.17 6.17 0 0 1-.477-.825l-.735-.05a.5.5 0 0 1-.45-.37l-.179-.67a.5.5 0 0 1 .207-.546l.612-.405a5.263 5.263 0 0 1-.02-.483 7.136 7.136 0 0 1 .017-.476l-.612-.41a.5.5 0 0 1-.204-.545l.18-.673a.5.5 0 0 1 .45-.369l.735-.048c.135-.286.293-.561.476-.827l-.325-.661a.5.5 0 0 1 .095-.574l.493-.493a.5.5 0 0 1 .574-.096l.662.325c.266-.182.54-.34.825-.474L4.22.636a.5.5 0 0 1 .37-.45l.671-.18a.5.5 0 0 1 .546.208l.405.611a5.971 5.971 0 0 1 .959-.002l.41-.612a.5.5 0 0 1 .545-.204l.672.18a.5.5 0 0 1 .37.45l.048.735c.286.135.56.293.826.474l.66-.324a.5.5 0 0 1 .574.095l.495.494a.5.5 0 0 1 .095.575l-.326.66c.184.266.341.541.474.825l.738.05a.5.5 0 0 1 .45.369l.18.673a.5.5 0 0 1-.205.545l-.611.41a6.562 6.562 0 0 1 0 .953l.611.41a.5.5 0 0 1 .205.545l-.18.673a.5.5 0 0 1-.45.37l-.496.032-.876-.875a4.971 4.971 0 1 0-3.055 3.055zm7.077 1.066c.804.804.795 2.117-.021 2.934-.818.818-2.132.827-2.935.024a2.048 2.048 0 0 1-.561-1.829L7.787 9.477a2.989 2.989 0 0 1-4.06-3.122.297.297 0 0 1 .505-.174l1.584 1.583a.296.296 0 0 0 .287.077l1.205-.323a.297.297 0 0 0 .21-.21l.324-1.205a.298.298 0 0 0-.077-.288L6.18 4.232a.297.297 0 0 1 .174-.505 2.986 2.986 0 0 1 3.122 4.06l4.1 4.099a2.044 2.044 0 0 1 1.826.56zm-1.486 2.524a1.053 1.053 0 1 0 0-2.106 1.053 1.053 0 0 0 0 2.106z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Entretien</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#damage" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="m1.245 9.624 1.2-1.775c.09-.177.267-.266.49-.266h5.558c.178 0 .4.089.489.266l1.2 1.775c.578.222 1.334.799 1.334 1.952v2.086c0 .577-.311.976-.711 1.153v.608c0 .31-.267.577-.578.577h-.934a.715.715 0 0 1-.49-.222c-.132-.133-.177-.519-.177-.696v.088c0-.222-.089-.4-.222-.577-.178-.177-.356-.221-.578-.221H3.602a.715.715 0 0 0-.49.221.712.712 0 0 0-.222.489v.133c0 .177-.044.474-.178.608a.571.571 0 0 1-.444.177h-.979a.588.588 0 0 1-.578-.577v-.74c0-.444-.711-.4-.711-1.199v-2.13c0-.976.711-1.508 1.245-1.73zm8.27 3.283c.367 0 .667-.3.667-.665a.668.668 0 0 0-1.334 0c0 .366.3.665.667.665zm-7.559 0c.367 0 .667-.3.667-.665a.668.668 0 0 0-1.334 0c0 .366.3.665.667.665zm3.758-1.753c1.957 0 3.223-.637 3.09-.848L8.226 9.21a.55.55 0 0 0-.49-.295h-4a.55.55 0 0 0-.49.295l-.622 1.055c-.133.253 1.135.89 3.091.89zM15.381 14h-1.996c-.32 0-.57-.234-.57-.534 0-.3.25-.534.57-.534h1.14L13.1 10.86a.555.555 0 0 1 .107-.568l1.497-1.636-1.71-1.368c-.215-.167-.25-.434-.143-.668l.855-1.88-1.782-.368a.548.548 0 0 1-.463-.467l-.285-1.87-1.64 1.002a.578.578 0 0 1-.748-.1l-1.46-1.502-1.314 1.936a.55.55 0 0 1-.665.2L3.337 2.89l-.943 2.817c-.107.267-.428.4-.748.267a.545.545 0 0 1-.321-.701l1.157-3.318c.107-.267.463-.4.748-.3l2.12.716L6.792.234C6.9.1 7.043 0 7.22 0c.179 0 .357.067.464.167l1.603 1.67L11.247.6c.178-.1.392-.134.57-.033.178.066.32.233.357.434l.356 2.37 2.138.434c.178.033.32.133.392.3a.613.613 0 0 1 0 .501l-.998 2.147 1.746 1.47c.25.2.25.534.036.767l-1.64 1.77 1.64 2.505c.071.166.071.367-.071.5-.036.134-.214.234-.392.234z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Dommage</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#valuation" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 597.33 597.33">
+                                                    <defs>
+                                                        <clipPath id="calculator_svg__a">
+                                                            <path d="M0 448h448V0H0z"></path>
+                                                        </clipPath>
+                                                    </defs>
+                                                    <g clip-path="url(#calculator_svg__a)" transform="matrix(1.33333 0 0 -1.33333 0 597.33)">
+                                                        <path d="M176 320h-48v-48H96v48H48v32h48v48h32v-48h48zm48 128H48a48 48 0 0 1-48-48V240h224zm192-208H288v32h128zm0-64H288v32h128zm32 224a48 48 0 0 1-48 48H256V0h144a48 48 0 0 1 48 48zM48 128h128V96H48zM0 48A48 48 0 0 1 48 0h176v208H0z"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Prix</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#equipment" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 631.27 894.75">
+                                                    <path d="M316.066 894.683c-63.667 0-127.333-.026-191 .067-4.853 0-9.026-1.147-13.266-3.427-39.734-21.32-71.333-51.44-96.333-88.706-10.534-15.733-15.6-33.2-15.454-52.187.134-19.64 4.134-38.4 13.334-55.813 11.44-21.693 28.706-35.626 53.733-38.28 15.426-1.64 29.72 2.427 43.16 9.8 11.666 6.4 21.333 15.16 29.44 25.64a5.307 5.307 0 0 0 4.746 2.267c116.093-.04 232.2-.053 348.306.053 2.947 0 4.053-1.706 5.467-3.466 9.773-12.12 21.44-21.76 35.72-28.24 26.893-12.2 56.933-4.934 75.08 18.333 11.866 15.213 17.92 32.746 20.826 51.6 3.12 20.253 1.427 39.866-7.413 58.546-6 12.667-14.454 23.654-23.32 34.387-23.44 28.36-51.627 50.906-83.947 68.36-1.64.88-3.826 1.026-5.76 1.026-64.44.054-128.88.04-193.332.04m-48.187-676.971h99.133v-43.4h-99.133zm172.986 187.706H193.32V217.952h38.186v-43.814c-4.907 0-9.76.027-14.613 0-13.334-.093-24.88-4.48-33.48-14.96-6.027-7.333-8.293-15.893-6.187-25.293 7.787-34.853 15.6-69.706 23.52-104.533 3.6-15.76 15.467-26.4 31.68-28.693 2.853-.4 5.747-.613 8.627-.613 51.2-.04 102.413-.04 153.626-.014 14.92 0 27.347 5.12 35.867 17.974 3.8 5.733 4.626 12.4 6.04 18.893 6.973 32.08 13.973 64.16 20.906 96.253 2.907 13.467-2.8 26.387-14.466 33.826-7.854 5-16.374 7.2-25.587 7.174h-14.133v43.706h37.546z"></path>
+                                                    <path d="M440.946 668.857H193.253V438.404h247.693zm125-40.933c-9.76-1.187-18.854.04-27.774 2.507-20.533 5.666-36.627 18.053-50.493 33.76-.64.72-1.6 1.613-2.454 1.64-5.2.146-10.413.08-15.866.08V218.75c9.306-.693 18.186.534 26.613 4.467 15.96 7.467 26.6 20 33.907 35.68 7.133 15.334 9.693 31.494 8.773 48.32-1.827 32.947-3.173 65.907-2.267 98.933.64 23.667 1.867 47.32 7.427 70.427 4.2 17.533 8 35.16 8.667 53.133.706 19.12 6.44 37.093 10.053 55.573 2.067 10.533 3.267 21.24 4.427 31.92.373 3.413-.614 6.973-1.014 10.72M161.666 218.618v446.386c-5.04 0-10 .107-14.933-.107-.947-.04-1.933-1.333-2.72-2.186-16.027-17.547-35.147-29.774-58.747-34.347-2.266-.44-4.6-.96-6.906-.933-2.734.04-3.507-1.16-3.84-3.667a413.386 413.386 0 0 1-3.547-67.8c.813-23.546 5.787-46.4 11.707-69.093 4.506-17.28 9.266-34.507 13.053-51.947 4.4-20.32 6.28-41.066 6.453-61.853.214-24.76-.666-49.52-.666-74.266 0-26.107 8.626-48.84 28.253-66.573 8.84-8 19.427-12.72 31.893-13.614"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Équipement (en anglais)</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#photos" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="m4 12 1.672-3.501a.5.5 0 0 1 .876-.049l.366.59a.5.5 0 0 0 .85 0l2.051-3.302a.5.5 0 0 1 .866.028L14 12h1v1H1v-1h3zm1.086 0h7.667l-2.107-4.456a.5.5 0 0 0-.865-.068L7.75 10.45a.5.5 0 0 1-.824.003l-.302-.435a.5.5 0 0 0-.882.12L5.086 12zm8.452-12C14.898 0 16 1.195 16 2.667v10.666C16 14.805 14.897 16 13.538 16H2.462C1.102 16 0 14.805 0 13.333V2.667C0 1.195 1.103 0 2.462 0h11.076zM3 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3zm2 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Photos</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="ReportNav_item__n4OrW">
+                                    <a href="/fr/exemple-de-rapport#checklist" class="" data-testid="Link-innerLink">
+                                        <div class="ReportNav_itemContent__9MyY8">
+                                            <span class="asIcon_root__hjcpi ReportNav_icon__yyunX">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor" d="M1.65 1.924A6.18 6.18 0 0 1 6.483.012c3.056.191 5.493 2.6 5.687 5.622a5.793 5.793 0 0 1-.813 3.405l4.14 4.092c.309.306.502.727.502 1.186 0 .459-.193.88-.503 1.186-.31.306-.735.497-1.199.497a1.71 1.71 0 0 1-1.2-.497L8.92 11.372c-.85.459-1.856.688-2.823.688H5.71C2.655 11.87.218 9.46.025 6.438-.13 4.755.45 3.148 1.649 1.924zm8.084 8.912 4.061 4.017c.155.153.31.229.503.229a.627.627 0 0 0 .503-.23c.155-.152.232-.305.232-.497a.614.614 0 0 0-.232-.497L10.778 9.88s-.29.338-.467.503a7.924 7.924 0 0 1-.577.453zM.953 6.361c.155 2.525 2.205 4.59 4.796 4.743h.349c.928 0 1.779-.23 2.553-.688l.116-.077c.618-.382 1.199-.918 1.586-1.53l.038-.038c.58-.918.89-1.99.813-3.098-.155-2.525-2.205-4.59-4.797-4.743h-.348c-1.431 0-2.747.574-3.752 1.606A5.198 5.198 0 0 0 .953 6.361zm2.901-.765h1.973V3.76c0-.267.116-.459.387-.459.27 0 .386.23.386.46v1.835h2.012c.27 0 .464.115.464.383 0 .267-.232.382-.464.382H6.6v1.721c0 .268-.116.46-.386.46-.271 0-.387-.23-.387-.46v-1.72H3.854c-.27 0-.464-.116-.464-.383 0-.268.193-.383.464-.383z"></path>
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="ReportNav_label__iSIAg">Liste de vérification </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Header_gap__K0LAs"></div>
+                        <div class="Header_items__413VE">
+                            <div class="Header_offCanvasHeader__7OIw_">carVertical
+                                <button class="HamburgerButton_root__l2FnG HamburgerButton_active__ow9pF Header_offCanvasCloseButton__BgyAf" type="button">
+                                    <div class="HamburgerButton_bar__K_yDT"></div>
+                                    <div class="HamburgerButton_bar__K_yDT"></div>
+                                    <div class="HamburgerButton_bar__K_yDT"></div>
+                                </button>
+                            </div>
+                            <div class="Header_spacer__9VCAP"></div>
+                            <div class="Header_nav__zwIME">
+                                <nav class="Nav_root__eUz__">
+                                    <a href="/" class="Nav_link__KpvO2 Nav_withIcon__BywA5 Nav_linkActive__3oO6M" data-testid="Link-innerLink">
+                                        <div class="Nav_wrapper__1wyqi">
+                                            <span class="Nav_text___KLlZ" title="Accueil">
+                                                <span class="asIcon_root__hjcpi Nav_icon__SDBvH">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.48 251.48">
+                                                        <path d="M209.35 135.55a7.5 7.5 0 0 0-7.5 7.5v76.11H49.63v-76.1a7.5 7.5 0 1 0-15 0v83.6a7.5 7.5 0 0 0 7.5 7.5h167.22a7.5 7.5 0 0 0 7.5-7.5v-83.6a7.5 7.5 0 0 0-7.5-7.5z"></path>
+                                                        <path d="M249.28 137.75 131.03 19.52a7.5 7.5 0 0 0-10.6 0L2.2 137.75a7.5 7.5 0 1 0 10.6 10.6L125.74 35.42l112.95 112.93a7.5 7.5 0 0 0 10.6-10.6z"></path>
+                                                    </svg>
+                                                </span>
+                                                <span class="Nav_label__dHwnL">Accueil</span>
+                                            </span>
+                                        </div>
+                                        <span class="asIcon_root__hjcpi Nav_chevron__2385a">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" xml:space="preserve">
+                                                <path d="M9.8 1.1 8.7 0 5 3.7 1.3 0 .1 1.1 5 6l4.8-4.9zm0 0"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a href="rapport" class="Nav_link__KpvO2   " data-testid="Link-innerLink">
+                                        <div class="Nav_wrapper__1wyqi">
+                                            <span class="Nav_text___KLlZ">
+                                                <span class="Nav_label__dHwnL">Exemple de rapport</span>
+                                            </span>
+                                        </div>
+                                        <span class="asIcon_root__hjcpi Nav_chevron__2385a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" xml:space="preserve">
+                                            <path d="M9.8 1.1 8.7 0 5 3.7 1.3 0 .1 1.1 5 6l4.8-4.9zm0 0"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a href="" class="Nav_link__KpvO2" data-testid="Link-innerLink">
+                                    <div class="Nav_wrapper__1wyqi">
+                                        <span class="Nav_text___KLlZ">
+                                            <span class="Nav_label__dHwnL">Fixation du prix</span>
+                                        </span>
+                                    </div>
+                                    <span class="asIcon_root__hjcpi Nav_chevron__2385a">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" xml:space="preserve">
+                                            <path d="M9.8 1.1 8.7 0 5 3.7 1.3 0 .1 1.1 5 6l4.8-4.9zm0 0"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                                
+                                <a href="/fr/aide" class="Nav_link__KpvO2" data-testid="Link-innerLink">
+                                    <div class="Nav_wrapper__1wyqi"><span class="Nav_text___KLlZ">
+                                        <span class="Nav_label__dHwnL">Aide</span>
+                                    </span>
+                                </div>
+                                <span class="asIcon_root__hjcpi Nav_chevron__2385a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" xml:space="preserve">
+                                        <path d="M9.8 1.1 8.7 0 5 3.7 1.3 0 .1 1.1 5 6l4.8-4.9zm0 0"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="Header_spacer__9VCAP"></div>
+                    <div class="Header_actions__FyDSe">
+                        <div class="Header_separator__zD_0y"></div>
+                        <button class="Button_root__T9Uaq Button_link__brmBH UserActions_link__TWNsS" type="button">
+                            <span class="asIcon_root__hjcpi UserActions_icon__AsmkT">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path d="M4.098 3.663C4.098 2.008 5.268.59 6.634.59c1.365 0 2.535 1.418 2.535 3.073S8.097 6.737 6.634 6.737 4.098 5.318 4.098 3.663zM.488 13.358c1.17-1.892 3.121-2.956 5.072-2.956H7.9c1.952 0 3.805 1.064 5.073 2.956"></path>
+                                </svg>
+                            </span>
+                            <span class="Button_label__fKpn5">Connexion</span>
+                        </button>
+                        <div class="Header_separator__zD_0y"></div>
+                        <!-- <button class="Button_root__T9Uaq Button_link__brmBH MarketSwitcherButton_root__0u2rP" type="button">
+                            <span class="asIcon_root__hjcpi MarketSwitcherButton_icon__45_9z">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 9 13">
+                                    <g clip-path="url(#marker_svg__a)">
+                                        <path d="M2.86 4.227c0-.867.635-1.625 1.482-1.625s1.482.65 1.482 1.625-.53 1.625-1.376 1.625c-.847 0-1.589-.65-1.589-1.625z"></path>
+                                        <path d="M8.365 3.901C8.047 2.06 6.353.543 4.447.543 2.54.543.847 2.06.529 3.901c-.212 1.084.106 1.625.636 2.709.211.325 2.54 4.658 3.176 5.958h.212c.635-1.3 2.964-5.525 3.176-5.958.53-1.084.847-1.734.636-2.709z"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="marker_svg__a">
+                                            <path fill="#fff" d="M0 0h9v13H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                            <span class="Button_label__fKpn5">fr</span>
+                        </button> -->
+                        <div class="Header_separator__zD_0y"></div>
+                        <div class="Header_contactBlock__XJgK5">
+                            <span class="asIcon_root__hjcpi Header_contactIcon___QKbY Header_mailIcon__z_ylb">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 11">
+                                    <path d="M11.639 2.1 7.249 6 2.862 2.1M12.419.5H2.081C1.398.5.91 1 .91 1.7V9c0 .7.487 1.2 1.17 1.2h10.338c.683 0 1.17-.5 1.17-1.2V1.7c0-.7-.487-1.2-1.17-1.2z"></path>
+                                </svg>
+                            </span>
+                            <div class="Header_contactMeans__Az570">
+                                <a class="Button_root__T9Uaq Button_link__brmBH Header_contactMean__XxT67">
+                                    <span class="Button_label__fKpn5">Nous contacter</span>
+                                </a>
+                                </div>
+                            </div>
+                            <a class="Button_root__T9Uaq Button_link__brmBH Header_contactLink__rP8gn">
+                                <span class="asIcon_root__hjcpi Header_contactIcon___QKbY">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 11">
+                                        <path d="M11.639 2.1 7.249 6 2.862 2.1M12.419.5H2.081C1.398.5.91 1 .91 1.7V9c0 .7.487 1.2 1.17 1.2h10.338c.683 0 1.17-.5 1.17-1.2V1.7c0-.7-.487-1.2-1.17-1.2z"></path>
+                                    </svg>
+                                </span>
+                                <span class="Button_label__fKpn5">Nous contacter</span>
+                            </a>
+                            <div class="Header_separator__zD_0y"></div>
+                        </div>
+                    </div>
+                    <button class="HamburgerButton_root__l2FnG Header_hamburgerButton__6GSX5" type="button">
+                        <div class="HamburgerButton_bar__K_yDT"></div>
+                        <div class="HamburgerButton_bar__K_yDT"></div>
+                        <div class="HamburgerButton_bar__K_yDT"></div>
+                    </button><div class="Header_dimmer___OAea"></div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <main class="Page_root__B5mFc clipPathShapes" style="margin-top: 66px;">
+        <section class="Section_root__CSYJM Section_none__lX4KI" style="background-color: rgb(255, 255, 255);">
+            <div class="Hero_root__B5tS7 Hero_lightBlue__3NywJ">
+                <div class="Container_root__rNzvL Hero_container__Vuypm HeroSection_root__Wkq_M">
+                    <div class="Hero_leftColumn___7Tt3 mt-5 mb-5">
+                        <div class="Title_root__Wim_K Title_noSpaceBelow__CE9iw">
+                            <h1 class="Title_reset__gbrS6 Title_title_l__b8VUU Title_black__dGHvd">
+                                <span class="HeroSection_text__53hqm">On vous aide à choisir le bon véhicule</span>
+                            </h1>
+                            <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd Hero_subtitle__uD6v1">
+                                <span class="HeroSection_text__53hqm">Évitez les problèmes coûteux en vérifiant l'historique d'un véhicule. Saisissez un NIV pour obtenir instantanément un rapport détaillé.</span>
+                            </p>
+                        </div>
+                        <div class="IdentifierForm_root__Qd6B_ Hero_form__vj6z7">
+                            <div class="IdentifierForm_switch__6bEG6">
+                                
+                            </div>
+                            <form action="{{ url_for('rapport') }}" method="post" class="SingularForm_root__DI5bx SingularForm_focusActive__s_V56 SingularForm_iconLarge__7DO8h">
+                                <div class="SingularForm_container__3Ki5f">
+                                    <div class="SingularForm_wrapper__zxQmZ">
+                                        <label class="SingularForm_inputWrapper__ZCdgz">
+                                            <span class="SingularForm_label__Ecbaa">
+                                                <span class="SingularForm_labelText___Gmyf">Entrez VIN</span>
+                                                <span class="SingularForm_error__kSVs9"></span>
+                                            </span>
+                                            <input class="IdentifierInput_root__bE4Ph SingularForm_input__NeWZx" name="identifier" data-testid="IdentifierForm-input" placeholder="1VWBN7A35CCXXXXXX" data-hook="VinForm-input"></label>
+                                        </div>
+                                        <div class="SingularForm_buttonWrapper__7K5Eq">
+                                            <button class="Button_root__HroBI Button_primary__MFxvB Button_large__ZiCN9 SingularForm_action__9_lRS" type="submit" data-testid="IdentifierForm-submit" data-hook="VinForm-submit">
+                                                <span class="IdentifierForm_label__wiEOZ">Vérifier la voiture</span>
+                                            </button>
+                                            <div class="SingularForm_icons__7_FHg">
+                                                <span class="SingularForm_icon____9qR SingularForm_errorIcon__PHYaI" tabindex="-1"></span>
+                                                <span class="AutoMotoIcon_root__52Y3f SingularForm_icon____9qR">
+                                                    <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_l__ONcED">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                                                            <circle cx="24.204" cy="20.423" r="2.577" stroke="currentColor" stroke-linecap="round" stroke-width="0.8"></circle>
+                                                            <circle cx="7.021" cy="20.423" r="2.577" stroke="currentColor" stroke-linecap="round" stroke-width="0.8"></circle>
+                                                            <path stroke="currentColor" stroke-linecap="square" stroke-width="0.8" d="M4.436 21.047H3.221A2.221 2.221 0 0 1 1 18.827v-3.339c0-.705.335-1.369.903-1.787l2.533-1.868 2.422-1.415c.34-.198.727-.303 1.12-.303h8.446a3.7 3.7 0 0 1 1.696.41l6.42 3.309a2.3 2.3 0 0 0 .52.19l3.648.837a2.221 2.221 0 0 1 1.646 2.75l-.463 1.698a2.221 2.221 0 0 1-2.143 1.637h-.977"></path>
+                                                            <path stroke="currentColor" stroke-linecap="round" stroke-width="0.8" d="m4.444 11.833 1.497 1.623a2.96 2.96 0 0 0 2.177.954H26.78m-13.267-4.156.86 3.866M1.047 16.267h2.147m24.436 0h2.149"></path>
+                                                            <path stroke="currentColor" stroke-width="0.8" d="M9.594 20.882h12.027"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_l__ONcED">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                                                            <path stroke="currentColor" stroke-miterlimit="10" stroke-width="0.8" d="M24.378 12.37a656.046 656.046 0 0 0-3.755 6.301c-.521.934-1.173 1.314-2.25 1.314H7.697m16.224-9.028c-1.655-1.224-3.643-1.099-5.042-.514-1.06.443-1.857 1.163-2.183 1.923a1.275 1.275 0 0 0-1.036-.533H7.696c-.703 0-1.275.572-1.275 1.275v1.802m0-.405c-1.15 0-2.924 1.249-3.548 2.497m3.744-2.497 16.518-.12m-8.781 2.617H18.1"></path>
+                                                            <path stroke="currentColor" stroke-miterlimit="10" stroke-width="0.8" d="M16.897 14.418v-1.316c0-.703-.572-1.275-1.275-1.275m11.031 7.56L23.216 8.63a.202.202 0 0 0-.127-.127L20 7.5"></path>
+                                                            <path stroke="currentColor" stroke-miterlimit="10" stroke-width="0.8" d="M25.38 10H26v2h-.62c-.76 0-1.38-.448-1.38-1s.62-1 1.38-1zm1.209 13.243a3.745 3.745 0 1 0 0-7.49 3.745 3.745 0 0 0 0 7.49zm-18.724 0a3.745 3.745 0 1 0 0-7.49 3.745 3.745 0 0 0 0 7.49z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="HeroSection_features__eiwbQ">
+                                <ul class="FeatureCheckList_list__F2Vgh FeatureCheckList_black__bc8l2">
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Kilométrage faussé</span>
+                                    </li>
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Rapport sur les dommages dissimulés</span>
+                                    </li>
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Photos historiques</span>
+                                    </li>
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Défauts communs à chaque modèle</span>
+                                    </li>
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Propriétaires multiples</span>
+                                    </li>
+                                    <li class="FeatureCheckList_listItem__wxc2k">
+                                        <span class="asIcon_root__hjcpi asIcon_original__wja3U Icon_root__mRIEG Icon_s__Zaekm FeatureCheckList_icon__vkvza">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                                                <path fill="currentColor" fill-rule="evenodd" d="M12.972 1.358c-.743.872-1.381 1.823-2.045 2.748-.665.925-1.242 1.797-1.88 2.678-.638.881-1.153 1.64-1.748 2.46-.594.82-1.24 1.885-1.914 2.792l-.21.262c-.306-.462-.56-.95-.821-1.44-.376-.776-.735-1.552-1.154-2.338a1.178 1.178 0 0 0-1.617-.436 1.204 1.204 0 0 0-.542.724c-.081.312-.04.643.114.925.314.628.62 1.256.952 1.884.332.629.56 1.1.874 1.623l.219.35c.131.217.284.421.454.61a2.15 2.15 0 0 0 1.18.768 1.5 1.5 0 0 0 .805-.053c.324-.107.622-.283.874-.514a8.038 8.038 0 0 0 1.18-1.422l.568-.812c1.416-2.137 2.91-4.214 4.37-6.307.533-.76 1.066-1.518 1.617-2.26l.402-.506c.223-.236.348-.548.35-.872A1.195 1.195 0 0 0 13.776 1a1.033 1.033 0 0 0-.795.35" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="FeatureCheckList_text__GF_Du">Enregistrements de vol</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="Hero_rightColumn__xYTgO">
+                            <figure class="RightColumn_root__QFTPU">
+                                <div class="RightColumn_phone__X9uUK">
+                                    <!-- <div class="RightColumn_imageWrapper__K_Waj">
+                                        <img alt="" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=3840&amp;q=75 3840w" src="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Fframe-2c45d1f3f3ac710be6ef8f949cfe34b5.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="future-fill" class="RightColumn_frame__7hcif" loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                    </div>
+                                    <div class="RightColumn_reportsWrapper__vd1Do">
+                                        <div class="RightColumn_report__Bdt7m">
+                                            <figcaption>
+                                                <p class="RightColumn_title__t3d2w">Rapport complet</p>
+                                                <p class="RightColumn_vin__eZaKL">VIN:SMT905JN26J262•••</p>
+                                            </figcaption>
+                                            <div class="RightColumn_imageWrapper__K_Waj">
+                                                <img alt="" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=3840&amp;q=75 3840w" src="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-1-276416b99c6dcbe8ec49d34b922ff92b.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="future-fill" loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                            </div>
+                                        </div>
+                                        <div class="RightColumn_report__Bdt7m">
+                                            <figcaption>
+                                                <p class="RightColumn_title__t3d2w">Rapport complet</p>
+                                                <p class="RightColumn_vin__eZaKL">VIN:3B7HF13YXWG209•••</p>
+                                            </figcaption>
+                                            <div class="RightColumn_imageWrapper__K_Waj">
+                                                <img alt="" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=3840&amp;q=75 3840w" src="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-2-97569544b8ef2148a982c097047ca3f8.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="future-fill" loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                            </div>
+                                        </div>
+                                        <div class="RightColumn_report__Bdt7m">
+                                            <figcaption>
+                                                <p class="RightColumn_title__t3d2w">Rapport complet</p>
+                                                <p class="RightColumn_vin__eZaKL">VIN:1N4BA41E74C829•••</p>
+                                            </figcaption>
+                                            <div class="RightColumn_imageWrapper__K_Waj">
+                                                <img alt="" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=3840&amp;q=75 3840w" src="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-3-d7e7fe4d7ec80a6b71ce1fddb6eafff0.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="future-fill" loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                            </div>
+                                        </div>
+                                        <div class="RightColumn_report__Bdt7m">
+                                            <figcaption>
+                                                <p class="RightColumn_title__t3d2w">Rapport complet</p>
+                                                <p class="RightColumn_vin__eZaKL">VIN:JH4DB1650MS013•••</p>
+                                            </figcaption><div class="RightColumn_imageWrapper__K_Waj">
+                                                <img alt="" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=3840&amp;q=75 3840w" src="/_next/image?url=%2F_next%2Fstatic%2Fimages%2Freport-4-a6f469c2e19df11427eb1666a7186a17.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="future-fill" loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div> 
+                                <span class="asIcon_root__hjcpi RightColumn_whiteSpikesIcon__oDAqc">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 58 75">
+                                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.244" d="M6.953 49.1c-.804-11.79-.985-23.625-.446-35.44m13.415 41.42A813.099 813.099 0 0 1 55.29 1M25.672 74l31.324-19.825"></path>
+                                    </svg>
+                                </span>
+                                <figure class="RightColumn_car__RGnI7">
+                                    <div class="RightColumn_carWrapper__S7Brg">
+                                        <img style="width: 988px;
+                                        aspect-ratio: auto 988 / 402;
+                                        height: 402px;" alt=""  src="{{ url_for('static', filename='img/car-desktop-7d98c996a29bed25fa0c88af591d7111.webp') }}"  width="988" height="402" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                        <span class="asIcon_root__hjcpi RightColumn_blackSpikesDesktop__XLBJp">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 34 42">
+                                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.244" d="M29.311 26.594c.074-6.49-.2-12.984-.872-19.445m-6.136 23.138A446.039 446.039 0 0 0 .96 1.77m18.737 39.076L1.681 30.978"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="asIcon_root__hjcpi RightColumn_blackSpikesMobile__X_PBk">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 27">
+                                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33" d="M25.15 14.41A121.696 121.696 0 0 0 21.118 1m-.208 17.226A322.613 322.613 0 0 0 1 2.102m19.964 23.946-14.3-3.702"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </figure>
+                                <span class="asIcon_root__hjcpi RightColumn_desktopBg__dI_zg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 990 643">
+                                        <path fill="#04C1E9" d="M.001 527c0 344.626 286.569 624 640.071 624 353.501 0 348.933-279.374 348.933-624s4.568-624-348.933-624C286.57-97 .001 182.374.001 527z"></path>
+                                    </svg>
+                                </span>
+                                <span class="asIcon_root__hjcpi RightColumn_mobileBg__REOnx">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 685 483">
+                                        <path fill="#04C1E9" d="M370.349 4.874C151.511-24.777 41.553 84.844 6.504 225.652-13.524 306 6.511 458.865 155.081 483H685C682.175 245.535 569.782 31.907 370.349 4.874z"></path>
+                                    </svg>
+                                </span>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="Section_root__CSYJM Section_regularTop__ohN79 Section_regularBottom___jfB2" style="background-color: rgb(255, 255, 255);">
+                <div class="Container_root__rNzvL">
+                    <div class="Title_root__Wim_K ReasonsSection_title__BoXVm">
+                        <h2 class="Title_reset__gbrS6 Title_title_m__lc8US Title_black__dGHvd">Vérifiez toujours un véhicule avant de l'acheter</h2>
+                        <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd">carVertical a accès à l'un des plus grands réseaux de bases de données de registres de véhicules. Que vous achetiez un véhicule localement ou à l'étranger, nous pouvons vous éviter de faire une mauvaise affaire.</p>
+                    </div>
+                    <section class="ReasonsSection_reason__DefKp    ">
+                        <div class="Title_root__Wim_K Title_noSpaceBelow__CE9iw">
+                            <h3 class="Title_reset__gbrS6 Title_title_s__w3sxL Title_black__dGHvd">Évitez les arnaques coûteuses</h3>
+                            <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd">Les compteurs trafiqués, les accidents passés et d’autres faits cachés de l’historique d'un véhicule peuvent vous coûter des milliers d'euros en réparation. Anticipez les mauvaises affaires sur les voitures, motos ou autres véhicules d’occasion en vérifiant leur historique réel sur nos rapports.</p>
+                        </div>
+                        <div class="ReasonsSection_image__2dJak ReasonsSection_scams__YJA92">
+                            <img alt="Évitez les arnaques coûteuses" src="{{ url_for('static', filename='img/scams-desktop-5fe0a95ec56a0c0768f28c51e05b15be.webp') }}" width="397" height="321" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                        </div>
+                    </section>
+                    <section class="ReasonsSection_reason__DefKp">
+                        <div class="ReasonsSection_image__2dJak ReasonsSection_safety__1ygWa">
+                            <img alt="Vérifiez la fiabilité de la voiture" src="{{ url_for('static', filename='img/safety-desktop-c5de108b8a04fa08a031b4c922e252a3.webp') }}" width="362" height="286" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                        </div>
+                        <div class="Title_root__Wim_K Title_noSpaceBelow__CE9iw">
+                            <h3 class="Title_reset__gbrS6 Title_title_s__w3sxL Title_black__dGHvd">Vérifiez la fiabilité de la voiture</h3>
+                            <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd">Assurez votre sécurité et celle de votre famille en obtenant toutes les informations réelles sur le passé de la voiture. Les accidents de voiture cachés, les airbags gonflés et les problèmes de suspension peuvent avoir des conséquences dangereuses pour la santé.</p>
+                        </div>
+                        
+                    </section>
+                    <section class="ReasonsSection_reason__DefKp">
+                        <div class="Title_root__Wim_K Title_noSpaceBelow__CE9iw">
+                            <h3 class="Title_reset__gbrS6 Title_title_s__w3sxL Title_black__dGHvd">Prenez l'avantage dans les négociations</h3>
+                            <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd">Une parfaite connaissance de l’historique de la voiture peut révéler des éléments cachés par le vendeur. Prenez l'avantage dans les négociations en fournissant plus d’informations sur la voiture que le vendeur lui-même.</p>
+                        </div>
+                        <div class="ReasonsSection_image__2dJak">
+                            <img alt="Prenez l'avantage dans les négociations" src="{{ url_for('static', filename='img/bargain-desktop-a056bde8a6576227e88c69f28bd13e3f.webp') }}" width="490" height="346" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <div class="VinLocationSection_blue__9_sha">
+                <section class="Section_root__XUCc3 Section_regularTop__2eotQ Section_regularBottom__0wWxm Section_responsive__4s6oI" style="background: transparent;">
+                    <div class="Container_root__rNzvL">
+                        <div class="Title_root__Wim_K Title_centered__kOgdB">
+                            <h2 class="Title_reset__gbrS6 Title_title_m__lc8US Title_black__dGHvd">Où puis-je trouver le NIV ?</h2>
+                        </div>
+                        <ul class="VinLocationSection_list__0IcZa VinLocationSection_locationList__szEot">
+                            <li class="VinLocationSection_locationListItem__oepED">
+                                <div class="VinLocationSection_image__S21FV">
+                                    <img alt="" src="{{ url_for('static', filename='img/vin-illustration-1-f11dbfb6ccc37e603a2d3418d76eaafd.webp') }}" width="124" height="124" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                </div>
+                                <p class="VinLocationSection_locationDescription__Mg3wZ">Sur le tableau de bord, sous le pare-brise</p>
+                            </li>
+                            <li class="VinLocationSection_locationListItem__oepED">
+                                <div class="VinLocationSection_image__S21FV">
+                                    <img alt="" src="{{ url_for('static', filename='img/vin-illustration-2-000de1c9377a096519546cc180cfd267.webp') }}" width="124" height="124" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                </div>
+                                <p class="VinLocationSection_locationDescription__Mg3wZ">Sur le cadre de la portière côté conducteur</p>
+                            </li
+                            ><li class="VinLocationSection_locationListItem__oepED">
+                                <div class="VinLocationSection_image__S21FV">
+                                    <img alt="" src="{{ url_for('static', filename='img/vin-illustration-3-ed7b05d29e11b886381a20f7475c1cdb.webp') }}" width="124" height="124" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                </div>
+                                <p class="VinLocationSection_locationDescription__Mg3wZ">Sur le moteur, sous le capot</p>
+                            </li>
+                            <li class="VinLocationSection_locationListItem__oepED">
+                                <div class="VinLocationSection_image__S21FV">
+                                    <img alt="" src="{{ url_for('static', filename='img/vin-illustration-4-91d5ce0d26bdc08231a1d0362cd70f7e.webp') }}" width="124" height="124" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                </div>
+                                <p class="VinLocationSection_locationDescription__Mg3wZ">Sur le certificat d'immatriculation du véhicule</p>
+                            </li>
+                            <li class="VinLocationSection_locationListItem__oepED">
+                                <div class="VinLocationSection_image__S21FV">
+                                    <img alt="" src="{{ url_for('static', filename='img/vin-illustration-5-d02091d5a305a0cbce62e1f21d6c1bf0.webp') }}"   width="124" height="124" decoding="async" data-nimg="future" loading="lazy" style="color: transparent;">
+                                </div>
+                                <p class="VinLocationSection_locationDescription__Mg3wZ">Demandez au vendeur</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="FeaturesSection_white__G_fxH">
+                <section class="Section_root__CSYJM Section_regularTop__ohN79 Section_regularBottom___jfB2" style="background-color: transparent;">
+                    <div class="Container_root__rNzvL">
+                        <div class="Title_root__Wim_K FeaturesSection_title__vd4CD HomePage_title__fS6vU">
+                            <h2 class="Title_reset__gbrS6 Title_title_m__lc8US Title_black__dGHvd">Ce que nous vérifions lors de la rédaction d'un rapport</h2>
+                            <p class="Title_subtitle___d45F Title_subtitle_m__dFx2_ Title_reset__gbrS6 Title_black__dGHvd">carVertical a accès à l'un des plus grands réseaux de bases de données de registres de véhicules. Que vous achetiez un véhicule localement ou à l'étranger, nous pouvons vous éviter de faire une mauvaise affaire.</p>
+                        </div>
+                        <div class="FeaturesSection_list__PfjMh">
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg viewBox="0 0 91 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M78.73 60.082h8.962m0-28.879h-7.008c-7.456 0-9.965 3.611-17.583 9.027h-7.51a40.426 40.426 0 0 0-1.953 14.444c0 3.701 3.585 5.416 7.33 5.416h3.424" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M87.69 43.834H75.304l-3.746-3.611M1.656 60.082h19.716m14.338.008h10.754V47.452c-5.377-3.827-12.886-5.416-23.3-7.222-6.972-6.662-13.03-9.027-19.715-9.027H1.656" stroke="currentColor" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="m17.948 42.387-3.584 1.444H1.656m34.05 16.258a7.26 7.26 0 0 1-1.209 4.012 7.18 7.18 0 0 1-3.217 2.66 7.12 7.12 0 0 1-4.142.411 7.153 7.153 0 0 1-3.671-1.976 7.24 7.24 0 0 1-1.962-3.698 7.272 7.272 0 0 1 .408-4.173 7.21 7.21 0 0 1 2.64-3.24 7.133 7.133 0 0 1 9.053.897 7.249 7.249 0 0 1 2.1 5.107Zm43.015 0a7.26 7.26 0 0 1-1.208 4.012 7.18 7.18 0 0 1-3.217 2.66 7.12 7.12 0 0 1-4.143.411 7.153 7.153 0 0 1-3.67-1.976 7.238 7.238 0 0 1-1.962-3.698 7.27 7.27 0 0 1 .407-4.173 7.211 7.211 0 0 1 2.641-3.24 7.132 7.132 0 0 1 9.053.897 7.249 7.249 0 0 1 2.1 5.107ZM33.925 35.045l-9.804-11.068 11.596 1.806-1.792-12.639L44.68 23.977l10.754-10.832v12.638l8.962-1.806-7.17 9.262" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Rapport sur les dommages dissimulés</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">Personne ne veut acheter un véhicule défectueux. Acheter un véhicule trop cher ou faire face à des réparations futures coûteuses font partie des risques encourus.</p>
+                            </article>
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 92 80">
+                                        <path stroke="currentColor" fill="none" stroke-miterlimit="10" stroke-width="1.5" d="M36.984 45.26a3.015 3.015 0 1 0 0-6.03 3.015 3.015 0 0 0 0 6.03zm9.997 19.374H26.992"></path>
+                                        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5" d="M19.108 64.635h-8.822C5.737 58.855 3 51.876 3 43.948 3 25.188 18.215 10 36.948 10s33.948 15.215 33.948 33.948c0 7.984-2.625 14.908-7.259 20.687h-8.962"></path>
+                                        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.5" d="M36.972 50.788a8.543 8.543 0 1 0 0-17.085 8.543 8.543 0 0 0 0 17.085zm11.633 6.952H25.322a6.533 6.533 0 0 0-6.533 6.532v.195A6.533 6.533 0 0 0 25.322 71h23.283a6.533 6.533 0 0 0 6.533-6.533v-.195a6.533 6.533 0 0 0-6.533-6.533zM23.633 30.323l10.916 10.441M16.89 23.708l3.574 3.574m18.067-11.866v5.667m25.472 22.642h-5.667m-42.473 0h-5.668m48.199-20.017-3.574 3.574"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Kilométrage faussé</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">La fraude au kilométrage est plus courante que vous ne le pensez. Non seulement vous payez le véhicule trop cher, mais vous risquez aussi de vous retrouver à devoir payer une facture salée.</p>
+                            </article>
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg viewBox="0 0 91 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M60.97 23.912h-6.51a2.229 2.229 0 0 1-.84-.156 2.188 2.188 0 0 1-.713-.458l-5.734-5.564a5.89 5.89 0 0 0-1.945-1.29A6.005 6.005 0 0 0 42.919 16H25.645a6.004 6.004 0 0 0-2.308.443 5.892 5.892 0 0 0-1.946 1.291l-5.733 5.564a2.188 2.188 0 0 1-.714.458 2.229 2.229 0 0 1-.84.156h-6.51a6.102 6.102 0 0 0-4.24 1.738 5.82 5.82 0 0 0-1.752 4.15v32.045a5.82 5.82 0 0 0 1.766 4.164 6.103 6.103 0 0 0 4.263 1.725h53.377a6.102 6.102 0 0 0 4.226-1.725A5.82 5.82 0 0 0 67 61.881v-32.08a5.733 5.733 0 0 0-.45-2.26 5.845 5.845 0 0 0-1.305-1.915 6.007 6.007 0 0 0-1.961-1.276 6.118 6.118 0 0 0-2.313-.438Z" stroke="currentColor" stroke-width="1.7" stroke-miterlimit="10" fill="none"></path>
+                                        <path d="M34.304 53.967a10.57 10.57 0 0 1-5.774-1.71A10.207 10.207 0 0 1 24.7 47.7a9.932 9.932 0 0 1-.591-5.866 10.08 10.08 0 0 1 2.845-5.198 10.473 10.473 0 0 1 5.322-2.778 10.626 10.626 0 0 1 6.005.578c1.9.768 3.523 2.07 4.665 3.739a9.983 9.983 0 0 1 1.752 5.64c0 2.692-1.096 5.274-3.045 7.178a10.522 10.522 0 0 1-7.35 2.973Z" stroke="currentColor" stroke-width="1.7" stroke-miterlimit="10" fill="none"></path>
+                                        <path d="M11.7 17.805H7.594 11.7Z"></path>
+                                        <path d="M11.7 17.805H7.594" stroke="currentColor" stroke-width="1.7" stroke-miterlimit="10" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Photos historiques</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">Connaître l'apparence initiale du véhicule est essentiel pour comprendre son passif et identifier ses dommages ou potentiels points faibles.</p>
+                            </article>
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 92 80">
+                                        <path stroke="currentColor" fill="none" stroke-width="1.6" d="M60.896 13.002H34.657a9.396 9.396 0 0 0-5.722 1.823c-1.696 1.168-2.965 2.909-3.6 4.938L19.953 30.5m17.094 26.565h12.417"></path>
+                                        <path stroke="currentColor" fill="none" stroke-width="1.6" d="M60.893 35.527H30.408c-6.479 0-15.369-9.649-16.34-9.649h-9.79a2.766 2.766 0 0 0-1.26 0 3.14 3.14 0 0 0-1.092.694 3.344 3.344 0 0 0-.744 1.092c-.13.416-.191.853-.18 1.291v4.179c-.014.426.047.85.18 1.253.175.413.428.785.744 1.092a3.14 3.14 0 0 0 1.091.694l7.81 2.43v3.23a10.883 10.883 0 0 0-2.378 3.562 11.38 11.38 0 0 0-.86 4.263v5.166a8.82 8.82 0 0 0 .827 3.799 9.268 9.268 0 0 0 2.412 3.152v9.117c.012.443.097.88.252 1.292.16.398.392.76.684 1.063.319.293.684.525 1.08.684.427.092.868.092 1.295 0h13.137c.428.092.869.092 1.296 0a3.282 3.282 0 0 0 1.08-.684c.304-.293.538-.657.684-1.063.176-.404.25-.849.216-1.292v-6.04H49.52m-26.73-.002h12.165"></path>
+                                        <path stroke="currentColor" fill="none" stroke-width="1.6" d="M14.445 48.747c3.915-.327 7.85.217 11.554 1.596 4.031 2.165 5.075 4.786 5.075 6.685H19.376a4.346 4.346 0 0 1-1.835-.242 4.525 4.525 0 0 1-1.593-.99 4.82 4.82 0 0 1-1.092-1.575 5.05 5.05 0 0 1-.41-1.903v-3.57z"></path>
+                                        <path stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M69.136 58h18.677c.36 0 .716-.085 1.034-.243.318-.16.589-.389.788-.668a1.905 1.905 0 0 0 .194-1.913L74.973 29.235a2.08 2.08 0 0 0-.809-.898A2.316 2.316 0 0 0 72.956 28c-.43 0-.85.117-1.207.337a2.08 2.08 0 0 0-.809.898l-14.75 25.94a1.877 1.877 0 0 0 .16 1.915c.197.281.467.512.785.67.318.16.674.242 1.035.24h18.677"></path>
+                                        <path stroke="currentColor" fill="none" stroke-width="1.6" d="M72.898 33.551V48m0 5v-2"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Défauts communs à chaque modèle</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">Tout le monde n'est pas un gourou de l'automobile. Disposer d'une liste des déconvenues courantes vous aide à faire de meilleures décisions d'achat.</p>
+                            </article>
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 92 80">
+                                        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M36.666 71.318H2.623c-.249 0-.486-.06-.71-.166a1.627 1.627 0 0 1-.57-.45 1.462 1.462 0 0 1-.307-.64 1.794 1.794 0 0 1 0-.71l1.764-6.86a9.92 9.92 0 0 1 2.464-4.418 10.486 10.486 0 0 1 4.347-2.713l13.006-4.217c1.931-.781 3.14-3.612 3.258-7.782-1.48-1.315-4.703-4.525-4.703-7.83 0-1.148-.39-1.385-.402-1.397a1.376 1.376 0 0 1-.593-.32 1.36 1.36 0 0 1-.355-.569c-.166-.402-1.564-3.908-1.564-6.29 0-.118.024-.236.06-.355a3.644 3.644 0 0 1 1.468-2.155c0-.38.036-.794.06-1.268.082-1.552.19-3.636.19-6.219C20.01 11.05 27.414 2 36.57 2c8.28 0 12.283 4.288 12.923 7.06 2.026 1.09 3.779 2.854 3.779 7.9"></path>
+                                        <path fill="none" stroke="currentColor" stroke-width="1.6" d="M47.547 50.471v21.523l5.567 5.946h5.532l-.06-20.729"></path>
+                                        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M37.21 23.594v24.318a2.973 2.973 0 0 0 2.974 2.973H66.03a2.973 2.973 0 0 0 2.973-2.973V23.594a2.973 2.973 0 0 0-2.973-2.974H40.184a2.973 2.973 0 0 0-2.973 2.974zm10.884 3.72h10.02"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Propriétaires multiples</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">Connaître le nombre de propriétaires d'un véhicule vous aide à savoir s'il a été revendu fréquemment. Cela peut être le signe de défaillances graves.</p>
+                            </article>
+                            <article>
+                                <span class="asIcon_root__hjcpi FeaturesSection_icon__WURiM">
+                                    <svg viewBox="0 0 91 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.918 29.348c5.045 0 12.114.943 14.694 4.763-2.645 2.495-8.914 3.21-11.02 2.845-2.923-.517-3.674-3.91-3.674-7.608Zm35.921 0c-5.045 0-12.115.943-14.694 4.763 2.644 2.495 8.914 3.21 11.02 2.845 2.923-.517 3.674-3.91 3.674-7.608Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                                        <path d="M36.04 61.305c2.45-1.263 6.531-1.522 11.43-9.13 1.959-3.044 3.265-4.992 3.265-9.131V23.26C50.735 10.204 35.633 5 29.51 5h-3.266C20.122 5 5.02 10.204 5.02 23.261v19.783c0 4.139 1.306 6.087 3.265 9.13 4.898 7.61 8.98 7.868 11.429 9.13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                                        <path d="M50.735 55.417a8.172 8.172 0 0 1 2.316 2.615A7.6 7.6 0 0 1 54 61.306C54 66.723 35.322 75 29.51 75h-3.266c-5.812 0-24.49-8.278-24.49-13.695a7.783 7.783 0 0 1 1.026-3.403 8.39 8.39 0 0 1 2.468-2.684m30.794-3.049a8.924 8.924 0 0 0-3.405-3.332 9.773 9.773 0 0 0-4.759-1.228c-1.676 0-3.32.424-4.758 1.227a8.925 8.925 0 0 0-3.405 3.333s1.845 1.522 8.163 1.522c6.319 0 8.164-1.522 8.164-1.522Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                                    </svg>
+                                </span>
+                                <h3 class="FeaturesSection_infoTitle__bvqEm">Enregistrements de vol</h3>
+                                <p class="FeaturesSection_infoDescription__GcIoh">Nous vérifions des millions de registres auprès des services de police internationaux et locaux pour nous assurer qu'un véhicule n'a pas été volé dans un pays quelconque.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.esm.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.esm.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.js') }}"></script>
+</body>
+</html>

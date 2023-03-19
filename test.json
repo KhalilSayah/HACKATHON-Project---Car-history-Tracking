@@ -1,0 +1,90 @@
+{
+    "InfoCar" : {
+        "NIV":"11111",
+        "Date":"25/06/2001",
+        "Fabrication":"Renault",
+        "Modele":"R6",
+        "Type_Carrosserie":"Berlin",
+        "Annee_Production":"2018",
+        "Carburant":"Diesel",
+        "Transmition":"Auto",
+        "Moteur":"Puissant"
+        },
+    "Crashdata" :[{
+            "NIV":"11111",
+            "Date":"26/06/2001",
+            "Where":"Algerie",
+            "Damage_emp":"Par-brise",
+            "Estimated_Price":"10000"
+        },{
+            "NIV":"11111",
+            "Date":"26/06/2001",
+            "Where":"Algerie",
+            "Damage_emp":"Par-brise",
+            "Estimated_Price":"10000"
+        }],
+    "RepportData" : [
+            {
+                "NIV":"11111",
+                "Date":"27/06/2001",
+                "KM":"10000",
+                "Entretiens":["Lave-glace (vérifier)","Pression Pneux"],
+                "Timestamp":"30 min"
+            },{
+                "NIV":"11111",
+                "Date":"27/06/2003",
+                "KM":"25000",
+                "Entretiens":["Articles divers, lubrifiant (recharger)","Liquide de frein (recharger)"],
+                "Timestamp":"45 min"
+            },{
+                "NIV":"11111",
+                "Date":"27/06/2005",
+                "KM":"40000",
+                "Entretiens":["Filtre à huile moteur (remplacer)","Huile moteur (assécher/remplir)"],
+                "Timestamp":"30 min"
+            },{
+                "NIV":"11111",
+                "Date":"27/06/2010",
+                "KM":"55000",
+                "Entretiens":["Liquide de frein (recharger)","Huile moteur (assécher/remplir)"],
+                "Timestamp":"60 min"
+            },{
+                "NIV":"11111",
+                "Date":"27/06/20014",
+                "KM":"70000",
+                "Entretiens":["Entretien Vidange","Filtre à huile moteur (remplacer)"],
+                "Timestamp":"30 min"
+            }
+        ],
+    "SignalisationData" : [
+            {
+                "NIV":"11111",
+                "Date":"28/06/2001",
+                "Where":"Algeria",
+                "Source":"Police",
+                "Status":"True"
+            },
+            {
+                "NIV":"11111",
+                "Date":"28/06/2001",
+                "Where":"France",
+                "Source":"Police",
+                "Status":"True"
+            }],
+    "TransferData" : [{
+                "NIV":"11111",
+                "Date":"31/12/2001",
+                "Amount" :"1000000",
+                "Devise":"DZ",
+                "Previous_Owner":"0x123456789",
+                "New_Owner":"0x963852741"  
+            },{
+                "NIV":"11111",
+                "Date":"31/12/2021",
+                "Amount" :"1500000",
+                "Devise":"DZ",
+                "Previous_Owner":"0x123456789",
+                "New_Owner":"0x963852741"  
+            }
+        ]
+}
