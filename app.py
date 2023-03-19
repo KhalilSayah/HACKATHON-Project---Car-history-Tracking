@@ -7,6 +7,10 @@ import requests
 import ast
 
 
+def returnCarAddress(system,_NIV):
+    address = system.functions.getCar(_NIV).call()
+    return address
+
 
 def returnCarAdd(system,_NIV):
     
@@ -87,7 +91,20 @@ def getdata(_NIV,system):
     dump["RepportData"] = getlistdatad(Links["RepportData"])
     dump["TransferData"] = getlistdatad(Links["TransferData"])
     dump["SignalisationData"] = getlistdatad(Links["SignalisationData"])
-    #dump["Car_Address"] = system.getStoredAddress(_NIV)
+    dump["CarAddress"] = "https://mumbai.polygonscan.com/address/" + returnCarAddress(system,_NIV) + "#internaltx"
+    
+    Kms = []
+    for item in dump["RepportData"]:
+        Kms.append(item['KM'])
+
+    dump["Kms"] = Kms
+
+    dts = []
+    for item in dump["RepportData"]:
+        dts.append(item['Date'])
+
+    dump["dts"] = dts
+    print(dump["dts"])
 
     return dump
 
@@ -108,7 +125,7 @@ def rapport():
 
     abi = raw["abi"]
 
-    SYS_ADD = '0xCBa243AAEA94d527F559E852681F8022649AD571'
+    SYS_ADD = os.environ.get('SYS_ADD')
 
     # Create a Web3 object and connect to the Mumbai testnet
     w3 = Web3(Web3.HTTPProvider('https://rpc-mumbai.maticvigil.com'))

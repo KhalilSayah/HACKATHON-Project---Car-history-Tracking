@@ -1,0 +1,18 @@
+{
+  "contracts": {
+    "AutomobileRegistrationSystem": "885211865549e4a9157b3c3fec12224fb6416e25",
+    "Car": "5d7ce35a2c49ddac1eb7b8a9c4a4349640d687bb",
+    "CarFactory": "2264acabeb331eb0b0ca24f7fa9138f49eab2d23",
+    "SimpleStorage": "c857639c5801cf3662d6c8e47bd53beac3bf0196"
+  },
+  "tests": {
+    "tests/test_deployement.py": {
+      "coverage": false,
+      "isolated": false,
+      "results": ".F.",
+      "sha1": "328dc932dfa2881b5cf24fb26b5d426282bf4e0d",
+      "txhash": []
+    }
+  },
+  "tx": {}
+}

@@ -97,6 +97,7 @@ def AddCar(system, account, data,template):
     _NIV = data["NIV"]
     _Infos = get_hash(data,template)
     _Car = system.createNewCar(_NIV,_Infos,{"from":account})
+    _Car.tra
     _Car.wait(1)
     print('********* CAR ADDED ************')
     return _Car
